@@ -6,7 +6,7 @@ meta_description: "Github Pages"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
 paginate: 12
-baseurl: 'theme'
+baseurl: '/'
 email: 'rraddi@temple.edu'
 google_analytics: 'UA-143385454-1'
 disqus: 'demowebsite'
