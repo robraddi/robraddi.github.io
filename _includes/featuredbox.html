@@ -5,8 +5,10 @@
     <div class="row">
         <div class="col-md-5 wrapthumbnail">
             <a href="{{ post.url | absolute_url }}">
+            <!--
             <div class="thumbnail" style="background-image:url({{ site.baseurl }}/{{ post.image }});">
             </div>
+            -->
             </a>
         </div>
         <div class="col-md-7">
@@ -16,9 +18,6 @@
                 <div class="metafooter">
                     <div class="wrapfooter">
                         {% if post.author %}
-                        <span class="meta-footer-thumb">
-                        <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
-                        </span>
                         <span class="author-meta">
                         <span class="post-name"><a target="_blank" href="{{ author.web }}">{{ author.display_name }}</a></span><br/>
                         {% endif %}
