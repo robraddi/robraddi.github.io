@@ -359,15 +359,15 @@ span.post-name a,span.post-read-more a:hover {
     margin: 0px auto;
     text-align: center;
 }
-.wrapwideintro {
+.wrapintro1 {
     background: #fff;
-    width: 700px auto;
-    padding: 8rem;
-    max-width: 100% auto;
+    width: 800px auto;
+    padding: 3rem;
+    max-width: 90%;
     margin: 0px auto;
     text-align: left;
     margin-top: 0px;
-    margin-bottom:3.5rem;
+    margin-bottom: 0px;
     position: relative;
 
 }
