@@ -23,4 +23,8 @@
 <url>
 <loc>http://localhost:4000/category/tutorial/</loc>
 </url>
+<url>
+<loc>http://localhost:4000/notebooks/first_notebook.html</loc>
+<lastmod>2019-07-10T16:35:20-04:00</lastmod>
+</url>
 </urlset>
