@@ -40,7 +40,7 @@ twine upload dist/*
 
 
 
-## Protocol for setting up `conda install`
+## II. Protocol for setting up `conda install`
 
 Please see: [Tutorial for Uploading Conda Packages](https://docs.anaconda.com/anaconda-cloud/user-guide/tasks/work-with-packages/#uploading-conda-packages)
 
