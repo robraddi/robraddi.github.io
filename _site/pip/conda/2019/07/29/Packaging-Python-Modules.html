@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" href="/assets/images/favicon.png">
+<title>Packaging Python Modules | Rob Raddi</title>
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Packaging Python Modules | Rob Raddi</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Packaging Python Modules" />
+<meta name="author" content="Rob" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I. Protocol for setting up pip install" />
+<meta property="og:description" content="I. Protocol for setting up pip install" />
+<link rel="canonical" href="http://localhost:4000/pip/conda/2019/07/29/Packaging-Python-Modules.html" />
+<meta property="og:url" content="http://localhost:4000/pip/conda/2019/07/29/Packaging-Python-Modules.html" />
+<meta property="og:site_name" content="Rob Raddi" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-29T00:00:00-04:00" />
+<script type="application/ld+json">
+{"description":"I. Protocol for setting up pip install","author":{"@type":"Person","name":"Rob"},"@type":"BlogPosting","url":"http://localhost:4000/pip/conda/2019/07/29/Packaging-Python-Modules.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Rob"},"headline":"Packaging Python Modules","dateModified":"2019-07-29T00:00:00-04:00","datePublished":"2019-07-29T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/pip/conda/2019/07/29/Packaging-Python-Modules.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i" rel="stylesheet">
+<link href="/assets/css/theme.css" rel="stylesheet">
+<link href="/assets/css/custom.css" rel="stylesheet">
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="layout-post">
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<header class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsWow" aria-controls="navbarsWow" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container">
+
+        <!-- Begin Logo -->
+        <a class="navbar-brand" href="/">
+        <h4><a href="/index.html">Rob Raddi</a></h4>
+        <!--<img src="/assets/images/logo.png" alt="Rob Raddi">-->
+        </a>
+        <!-- End Logo -->
+
+        <!-- Begin Menu -->
+        <div class="collapse navbar-collapse" id="navbarsWow">
+
+            <!-- Begin Menu -->
+            <ul class="navbar-nav ml-auto">
+                <!--
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/news.html">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/teaching.html">Teaching</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="nav-link" href="https://biceps.readthedocs.io/en/latest/" target="_blank">BICePs</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a target="_blank" class="nav-link" href="https://github.com/robraddi">Github</a>
+                </li>
+
+
+                <!--
+                <li class="nav-item">
+                    <a class="nav-link highlight" href="https://github.com/wowthemesnet/affiliates-jekyll-theme/archive/master.zip">Download Theme</a>
+                </li>
+                -->
+
+            </ul>
+            <!-- End Menu -->
+
+        </div>
+    </div>
+</header>
+
+
+
+<!-- End Menu Navigation
+================================================== -->
+
+<div class="site-content">
+
+    <div class="container">
+
+    <!-- Site Title
+    ================================================== -->
+
+    <div class="mainheading" style="display:none;">
+        <h1 class="sitetitle">Rob Raddi</h1>
+        <p class="lead">
+             Pages to view my work.
+        </p>
+    </div>
+
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        <!-- Begin Article
+================================================== -->
+
+        <!--<div class="row">-->
+
+		<!-- Sidebar -->
+	<!--
+        <div class="col-sm-4">
+        </div>
+	-->
+
+
+		<!-- Post -->
+		<!---->
+
+		<div class="col-lg-10">
+			<div class="mainheading">
+
+                <!-- Post Categories -->
+                <div class="after-post-tags">
+                    <ul class="tags">
+                        
+                        
+                        <li>
+                         <a href="/category/conda/">Conda</a>
+                        </li>
+                        
+                        <li>
+                         <a href="/category/pip/">Pip</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Categories -->
+
+                <!-- Post Title -->
+				<h1 class="posttitle">Packaging Python Modules</h1>
+
+			</div>
+
+			<!-- Post Featured Image -->
+			
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<h2 id="i-protocol-for-setting-up-pip-install">I. Protocol for setting up <code class="highlighter-rouge">pip install</code></h2>
+
+<p>Please see: <a href="https://packaging.python.org/tutorials/packaging-projects/">Tutorial for Packing Python Projects</a></p>
+
+<h5 id="prerequisites">Prerequisites:</h5>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--user</span> <span class="nt">--upgrade</span> setuptools wheel
+
+pip <span class="nb">install</span> <span class="nt">--user</span> <span class="nt">--upgrade</span> twine
+
+</code></pre></div></div>
+
+<hr />
+
+<ol>
+  <li>
+    <p>Register an account on <a href="https://pypi.org/">https://pypi.org</a> or <a href="https://test.pypi.org/">https://test.pypi.org</a> if you would like to do testing first.</p>
+  </li>
+  <li>
+    <p>Create a <code class="highlighter-rouge">setup.py</code> - main commands/controls for the project
+to be built.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">python setup.py sdist bdist_wheel</code> <br /> NOTE: The command that is used to build the distribution archives (The <code class="highlighter-rouge">tar.gz</code> file is a source archive whereas the <code class="highlighter-rouge">.whl</code> file is a built distribution)</p>
+  </li>
+  <li>
+    <p>Lastly, run the following command to upload to your pypi account:</p>
+  </li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>twine upload dist/*
+</code></pre></div></div>
+
+<h2 id="protocol-for-setting-up-conda-install">Protocol for setting up <code class="highlighter-rouge">conda install</code></h2>
+
+<p>Please see: <a href="https://docs.anaconda.com/anaconda-cloud/user-guide/tasks/work-with-packages/#uploading-conda-packages">Tutorial for Uploading Conda Packages</a></p>
+
+<h5 id="prerequisites-1">Prerequisites:</h5>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">install </span>anaconda-client conda-build
+</code></pre></div></div>
+
+<hr />
+
+<ol>
+  <li>
+    <p>Register an account on <a href="https://anaconda.org/">https://anaconda.org/</a>.</p>
+  </li>
+  <li>
+    <p>Create a <code class="highlighter-rouge">meta.yaml</code> - main commands/controls for the project
+to be built.</p>
+  </li>
+  <li>
+    <p>Run <code class="highlighter-rouge">conda build</code> in the directory of <code class="highlighter-rouge">meta.yml</code></p>
+  </li>
+  <li>
+    <p>Lastly, login to your anaconda account and upload the package</p>
+  </li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>anaconda login
+anaconda upload /path/to/conda-package.tar.bz2
+</code></pre></div></div>
+
+
+                <div class="clearfix"></div>
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2019-07-29">29 Jul 2019</time></span>
+                
+                </small>
+            </p>
+
+
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation mt-4 prevnextlinks">
+              
+              
+            </div>
+            <!-- End Prev/Next -->
+
+
+             <!-- Author Box -->
+
+             <!--
+                
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&d=mm&r=x" alt="">
+					</div>
+					<div class="col-md-10">
+						<a target="_blank" class="link-dark" href=""></a><a target="_blank" href="" class="btn follow">Follow</a>
+						<span class="author-description"></span>
+					</div>
+				</div>
+                
+
+            -->
+
+
+            <!-- Begin Comments
+            ================================================== -->
+            <!--
+            <section>
+            <div id="comments">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'demowebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+            </div>
+            </section>
+            -->
+            <!--End Comments
+            ================================================== -->
+
+
+
+	    <!--</div>-->
+		<!-- End Post -->
+
+
+
+	</div>
+
+<!-- End Article
+================================================== -->
+
+    </div>
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Before Footer
+    ================================================== -->
+    <div class="beforefooter">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!--
+                <div class="col-md-8">Hello</div>
+                <div class="col-md-4 text-right footersocial">
+                    <h5>Follow me</h5>
+                    <i class="fa fa-github"></i>
+                -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Begin Footer
+    ================================================== -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-3">
+                <div class="footer-widget">
+                <a href="/contact">
+		<!--<img src="/assets/images/logo-footer.png">-->
+                </a>
+                </div>
+                </div>
+
+                <div class="col-sm-3">
+                <div class="footer-widget">
+                <h5 class="title"></h5>
+                <ul>
+                <li>Email: <a target="_blank" href="rraddi@temple.edu">rraddi@temple.edu</a></li>
+                <li>GitHub:<a target="blank" href="https://github.com/robraddi">https://github.com/robraddi</a></li>
+                <li>LinkedIn:<a target="blank" href="https://www.linkedin.com/in/rraddi">https://www.linkedin.com/in/rraddi</a></li>
+                </ul>
+                </div>
+                </div>
+
+                <!--
+                <div class="col-sm-3">
+                <div class="footer-widget">
+                <h5 class="title">Author</h5>
+                <ul>
+                </ul>
+                </div>
+                </div>
+                -->
+
+            </div>
+
+            <div class="copyright">
+                <p class="pull-left">
+                Copyright © 2019 Rob Raddi.
+                </p>
+                <p class="pull-right">
+                <!-- Please, leave credit to author unless you own a commercial license: https://www.wowthemes.net/freebies-license/ -->
+                <a target="_blank" href="https://www.wowthemes.net/free-jekyll-template-affiliates/">"Affiliates Theme"</a> - Design & Code by WowThemes.net
+                </p>
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- End Footer
+    ================================================== -->
+
+
+</div> <!-- /.site-content>
+
+<!-- JavaScript
+================================================== -->
+
+<script src="/assets/js/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+<script type='text/javascript' src='/assets/js/masonry.pkgd.min.js'></script>
+
+<script src="/assets/js/theme.js"></script>
+
+</body>
+
+</html>
