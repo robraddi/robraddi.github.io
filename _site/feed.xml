@@ -5,8 +5,8 @@
     <description>Pages to view my work.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Jul 2019 21:45:08 -0400</pubDate>
-    <lastBuildDate>Mon, 29 Jul 2019 21:45:08 -0400</lastBuildDate>
+    <pubDate>Fri, 02 Aug 2019 20:19:02 -0400</pubDate>
+    <lastBuildDate>Fri, 02 Aug 2019 20:19:02 -0400</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -44,7 +44,7 @@ to be built.&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;twine upload dist/*
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;protocol-for-setting-up-conda-install&quot;&gt;Protocol for setting up &lt;code class=&quot;highlighter-rouge&quot;&gt;conda install&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;ii-protocol-for-setting-up-conda-install&quot;&gt;II. Protocol for setting up &lt;code class=&quot;highlighter-rouge&quot;&gt;conda install&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;Please see: &lt;a href=&quot;https://docs.anaconda.com/anaconda-cloud/user-guide/tasks/work-with-packages/#uploading-conda-packages&quot;&gt;Tutorial for Uploading Conda Packages&lt;/a&gt;&lt;/p&gt;
 
