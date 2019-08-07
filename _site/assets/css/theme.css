@@ -252,15 +252,15 @@ span.post-date,span.post-read {
 
 span.post-read-more a {
 	color:rgba(0,0,0,.44);
-     align-items: center;
-    display: inline-block;
-    float: right;
-     width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    border: 1px solid #d0d0d0;
-    border-radius: 50%;
+	align-items: center;
+        display: inline-block;
+        float: right;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border: 1px solid #d0d0d0;
+        border-radius: 50%;
 }
 span.post-name a,span.post-read-more a:hover {
 	color:rgba(0,0,0,.8);
@@ -310,12 +310,15 @@ span.post-name a,span.post-read-more a:hover {
 	cursor:pointer;
 }
 .mediumnavigation .navbar-brand img {
+	display:inline-block;
 	margin-right:7px;
-    vertical-align: text-bottom;
-    max-width:initial;
+        vertical-align: text-bottom;
+        max-width:initial;
 }
 .mainheading h1.sitetitle {
 	font-family:Georgia;
+	display:inline-block;
+        max-width:initial;
 }
 .mainheading h1.posttitle {
 	font-weight:700;

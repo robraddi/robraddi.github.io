@@ -32,8 +32,6 @@
 
 
 
-
-
 </head>
 
 
@@ -51,10 +49,10 @@
     <div class="container">
 
         <!-- Begin Logo -->
-        <a class="navbar-brand" href="/">
-        <h4><a href="/index.html">Rob Raddi</a></h4>
+        <div class="navbar-brand" href="/">
+		<h4><a href="/index.html">Robert M. Raddi</a></h4>
         <!--<img src="/assets/images/logo.png" alt="Rob Raddi">-->
-        </a>
+        </div>
         <!-- End Logo -->
 
         <!-- Begin Menu -->
@@ -68,9 +66,6 @@
                 </li>
                 -->
                 <li class="nav-item">
-                    <a class="nav-link" href="/news.html">News</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/teaching.html">Teaching</a>
                 </li>
 
@@ -79,6 +74,12 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="nav-link" href="https://biceps.readthedocs.io/en/latest/" target="_blank">BICePs</a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/posts.html">Posts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about.html">About</a>
                 </li>
                 <li class="nav-item">
                     <a target="_blank" class="nav-link" href="https://github.com/robraddi">Github</a>
@@ -200,7 +201,7 @@ to be built.</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>twine upload dist/*
 </code></pre></div></div>
 
-<h2 id="protocol-for-setting-up-conda-install">Protocol for setting up <code class="highlighter-rouge">conda install</code></h2>
+<h2 id="ii-protocol-for-setting-up-conda-install">II. Protocol for setting up <code class="highlighter-rouge">conda install</code></h2>
 
 <p>Please see: <a href="https://docs.anaconda.com/anaconda-cloud/user-guide/tasks/work-with-packages/#uploading-conda-packages">Tutorial for Uploading Conda Packages</a></p>
 
@@ -340,19 +341,31 @@ anaconda upload /path/to/conda-package.tar.bz2
             <div class="row">
                 <div class="col-sm-3">
                 <div class="footer-widget">
-                <a href="/contact">
-		<!--<img src="/assets/images/logo-footer.png">-->
+                <!--
+		    <a href="/contact">
+			    <img src="/assets/images/logo-footer.png">
                 </a>
+                -->
+
+		<!-- Contact information -->
+		<p>MAILING ADDRESS:<br>
+                1901 N. 13th St.<br>
+		Beury Hall Room 102<br>
+		Temple University,<br>
+		Philadelphia, PA 19122<br>
+		</p>
+
                 </div>
                 </div>
 
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                 <div class="footer-widget">
                 <h5 class="title"></h5>
                 <ul>
+                <li>Office: Beury Hall, Room 102</li>
                 <li>Email: <a target="_blank" href="rraddi@temple.edu">rraddi@temple.edu</a></li>
-                <li>GitHub:<a target="blank" href="https://github.com/robraddi">https://github.com/robraddi</a></li>
-                <li>LinkedIn:<a target="blank" href="https://www.linkedin.com/in/rraddi">https://www.linkedin.com/in/rraddi</a></li>
+                <li>GitHub: <a target="blank" href="https://github.com/robraddi">https://github.com/robraddi</a></li>
+                <li>LinkedIn: <a target="blank" href="https://www.linkedin.com/in/rraddi">https://www.linkedin.com/in/rraddi</a></li>
                 </ul>
                 </div>
                 </div>
@@ -375,7 +388,8 @@ anaconda upload /path/to/conda-package.tar.bz2
                 </p>
                 <p class="pull-right">
                 <!-- Please, leave credit to author unless you own a commercial license: https://www.wowthemes.net/freebies-license/ -->
-                <a target="_blank" href="https://www.wowthemes.net/free-jekyll-template-affiliates/">"Affiliates Theme"</a> - Design & Code by WowThemes.net
+		Special thanks to Sal. Theme adopted from open source:
+                <a target="_blank" href="https://www.wowthemes.net/free-jekyll-template-affiliates/">"Affiliates Theme"</a>
                 </p>
                 <div class="clearfix"></div>
             </div>
