@@ -3,8 +3,8 @@ layout: default
 title: Posts
 ---
 
+<!-- Author: Rob Raddi -->
 
-<!-- List by Category -->
 
 
 <!-- Posts Index
@@ -16,41 +16,6 @@ title: Posts
 {% endif %}
 
 
-<section class="recent-posts row">
-    <div class="sidebar-section">
-        <div class="col-sm-4">
-            <h5><span>Python</span></h5>
-            <li style="list-style-type: none;"><a target="_blank" href="">  </a></li>
-            <li style="list-style-type: none;"><a target="blank" href="">   </a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="sidebar-section">
-    <div class="col-sm-4">
-            <h5><span>C++</span></h5>
-            <li style="list-style-type: none;"><a target="_blank" href="">  </a></li>
-            <li style="list-style-type: none;"><a target="blank" href="">   </a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="sidebar-section">
-    <div class="col-sm-4">
-            <h5><span>Bash</span></h5>
-            <li style="list-style-type: none;"><a target="_blank" href="">  </a></li>
-            <li style="list-style-type: none;"><a target="blank" href="">   </a></li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
-
-<!-- Featured
-================================================== -->
 <section class="featured-posts">
 
     <div class="section-title">
@@ -58,70 +23,27 @@ title: Posts
         <h2><span>Posts:</span></h2>
     </div>
 
-    <div class="row listfeaturedtag">
-
-    {% for post in site.posts %}
-
-        {% if post.featured == true %}
-
-            {% include featuredbox.html %}
-
-        {% endif %}
-
+    <!-- List by Category -->
+    <section class="recent-posts row">
+    {% for category in site.categories %}
+        <div class="sidebar-section">
+            <div class="col-sm-12">
+                <h5><span> {{ category[0] }} </span></h5>
+    	        <ul>
+                {% for post in category[1] %}
+	            {% if post.featured == true %}
+    		        <!-- See this file for more information regarding post
+    	                ~/github/robraddi.github.io/_layouts
+    		        -->
+    		        <li style="list-style-type: none;"><a href="{{ post.url }}"> {{ post.title }} : {{ post.date | date:"%m-%d-%Y"}} </a></li>
+	            {% endif %}
+                {% endfor %}
+    	        </ul>
+            </div>
+        </div>
     {% endfor %}
-
-    </div>
-
+    </section>
 </section>
-
-<!-- Posts Index
-================================================== -->
-<!--
-{% if paginator.previous_page %}
-{% if paginator.previous_page > 0 %}
-<div id="jumptopageof"></div>
-{% endif %}
-{% endif %}
-<section class="recent-posts row">
-    <div class="col-sm-4">
-    </div>
--->
-
-<!--
-    <div class="col-sm-8">
-        <div class="section-title">
-            <h2><span>All Stories</span></h2>
-        </div>
--->
-<!--
-        <div class="masonrygrid row listrecent">
-            {% for post in paginator.posts %}
-            {% unless post.featured == true %}
-                {% include postbox.html %}
-            {% endunless %}
-            {% endfor %}
-        </div>
--->
-        <!-- Pagination -->
-<!--
-        <div class="bottompagination">
-            <span class="navigation" role="navigation">
-                {% include pagination.html %}
-            </span>
-        </div>
-    </div>
-</section>
--->
-
-
-
-
-
-
-
-
-
-
 
 
 
