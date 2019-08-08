@@ -2,7 +2,7 @@
 layout: post
 title:  "Packaging Python Modules"
 author: Rob
-categories: [ Pip, Conda ]
+categories: [ Pip & Conda ]
 featured: true
 ---
 
