@@ -13057,7 +13057,31 @@ ul.typeahead-list  > li > a.pull-right {
 
     </style>
 <style type="text/css">
-    <style>
+    
+
+
+
+<style>
+div.header {
+    display: block; text-align: center;
+    /*position: running(header);*/
+    position: header;
+}
+div.footer {
+    display: block; text-align: right;
+    /*position: running(footer);*/
+    position: footer;
+}
+@page {
+    @top-center { content: element(header) }
+}
+@page {
+    @bottom-center { content: element(footer) }
+}
+
+
+
+<style>
     @font-face {
         font-family: "Computer Modern";
         src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
@@ -13121,16 +13145,8 @@ ul.typeahead-list  > li > a.pull-right {
         margin-top: 0.5em;
         display: block;
     }
-    .footer{
-    text-align: center;
-    font-family: arial, helvetica;
-    font-size: 11px;
-    }
-
 </style>
-<!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script>
     MathJax.Hub.Config({
                         TeX: {
                            extensions: ["AMSmath.js"]
@@ -13141,12 +13157,10 @@ ul.typeahead-list  > li > a.pull-right {
                 },
                 displayAlign: 'center', // Change this to 'center' to center equations.
                 "HTML-CSS": {
-                    styles: {'.MathJax_Display': {"margin": 4}},
-                    linebreaks: { automatic: true }}
+                    styles: {'.MathJax_Display': {"margin": 4}}
+                }
         });
 </script>
-
-
 
     </style>
 
@@ -13182,7 +13196,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -13214,7 +13228,7 @@ div#notebook {
 <h1 style="align: center;font-size: 10pt;">Phone: 267-312-0604; Email: <a href="rraddi@temple.edu"> rraddi@temple.edu</a>; Website: <a href="rraddi@temple.edu">robraddi.github.io</a>;  Github: <a href="github.com/robraddi">github.com/robraddi</a></h1><hr style="height:2.5px">
 
 <!-- Summary -->
-<h3 style="align: left;font-size: 12pt;"> Summary </h3>
+<h5 style="align: left;font-size: 12pt;"> Summary </h5>
 <ul>
     <li style="list-style-type: none;font-size: 10pt;">Proficient in various programming languages & packaging modules</li>
     <li style="list-style-type: none;font-size: 10pt">Constructed simulation code from scratch (MCMC & MD) as toy models</li>
@@ -13226,7 +13240,7 @@ div#notebook {
 <hr style="height:2.5px">
 
 <!-- Education -->
-<h3 style="align: left;font-size: 12pt;">Education</h3>
+<h5 style="align: left;font-size: 12pt;">Education</h5>
 <h4 style="align: left;font-size: 10pt;">2018 - 2023 &nbsp;&nbsp;&nbsp;&nbsp; Ph.D. Theoretical/Physical Chemistry, Temple University; &nbsp;&nbsp;&nbsp;&nbsp;Principal Investigator: Dr. Vincent Voelz
 </h4>
 <h4 style="align: left;font-size: 10pt;">2013 - 2017 &nbsp;&nbsp;&nbsp;&nbsp; B.S. Chemistry, Temple University &nbsp;&nbsp;&nbsp;&nbsp; <a href="images/ACS.jpg" target="_blank">ACS Certification</a>;</h4>
@@ -13234,7 +13248,7 @@ div#notebook {
 <hr style="height:2.5px">
 
 <!-- History/Experience -->
-<h3 style="align: left;font-size: 12pt;"> History/Experience </h3>
+<h5 style="align: left;font-size: 12pt;"> History/Experience </h5>
 <h3 style="align: left;font-size: 10pt;">
     2019 - Present &nbsp;&nbsp;&nbsp;&nbsp; Graduate Research Assistant, Temple University
     <ul>
@@ -13260,19 +13274,18 @@ div#notebook {
 <hr style="height:2.5px">
 
 <!-- Publications -->
-<h3 style="align: left;font-size: 12pt;">Publications</h3>
+<h5 style="align: left;font-size: 12pt;">Publications</h5>
 
 <h6 style="align: left;font-size: 10pt;">1. BICePs 2.0: new tools for Bayesian Inference of Conformational Populations from Theory and Experiment. Yunhui Ge*, Rob Raddi*, Vincent Voelz. In prep.</h6>
 
 <hr style="height:2.5px">
 
 <!-- Skills & Languages -->
-<h3 style="align: left;font-size: 12pt;">Skills & Languages</h3>
-<h6 style="align: left;font-size: 10pt;">Primary Programming Languages: Python, C++, Bash, Visual Basic for Applications (Microsoft Excel macros)</h6>
-<h6 style="align: left;font-size: 10pt;">Markup Languages: Markdown, HTML, LaTex</h6>
-<h6 style="align: left;font-size: 10pt;">Preferred Operating System: UNIX</h6>
-<h6 style="align: left;font-size: 10pt;">High performance computing platforms: Owlsnest computing clusters, Folding@home distributed computing platform</h6>
-<h6 style="align: left;font-size: 10pt;">Proficient with the following programs: LabView & AutoCAD (engineering software), Gromacs & OpenMM(molecular dynamics simulations), Chimera & VMD-Visual Molecular Dynamics (interactive molecular visualization), mMASS (Mass spectrometry data acquisition and processing), TopSpin (NMR data acquisition and processing)</h6>
+<h5 style="align: left;font-size: 12pt;">Skills & Languages</h5>
+<h4 style="align: left;font-size: 10pt;">Primary Programming Languages: Python, C++, Bash, Visual Basic for Applications (Microsoft Excel macros)</h4>
+<h4 style="align: left;font-size: 10pt;">Markup Languages: Markdown, HTML, LaTex</h4>
+<h4 style="align: left;font-size: 10pt;">High performance computing platforms: Owlsnest computing clusters, Folding@home distributed computing platform</h4>
+<h4 style="align: left;font-size: 10pt;">Proficient with the following programs: LabView & AutoCAD (engineering software), Gromacs & OpenMM(molecular dynamics simulations), Chimera & VMD-Visual Molecular Dynamics (interactive molecular visualization), mMASS (Mass spectrometry data acquisition and processing), TopSpin (NMR data acquisition and processing)</h4>
 
 
 <hr style="height:2.5px">
@@ -13285,7 +13298,7 @@ div#notebook {
 -->
 
 <p><!-- Other Experience --></p>
-<h3 style="align: left;font-size: 12pt;"> Other Experience </h3><h3 style="align: left;font-size: 10pt;">
+<h5 style="align: left;font-size: 12pt;"> Other Experience </h5><h3 style="align: left;font-size: 10pt;">
     December 2008 - September 2018 &nbsp;&nbsp;&nbsp;&nbsp; Janitor/Handyman, Lords & Ladies Salon and Medical Spa 
     <ul>
         <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">Responsible for the cleanliness of the floors each week </li>
