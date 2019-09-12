@@ -13057,31 +13057,7 @@ ul.typeahead-list  > li > a.pull-right {
 
     </style>
 <style type="text/css">
-    
-
-
-
-<style>
-div.header {
-    display: block; text-align: center;
-    /*position: running(header);*/
-    position: header;
-}
-div.footer {
-    display: block; text-align: right;
-    /*position: running(footer);*/
-    position: footer;
-}
-@page {
-    @top-center { content: element(header) }
-}
-@page {
-    @bottom-center { content: element(footer) }
-}
-
-
-
-<style>
+    <style>
     @font-face {
         font-family: "Computer Modern";
         src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
@@ -13145,8 +13121,16 @@ div.footer {
         margin-top: 0.5em;
         display: block;
     }
+    .footer{
+    text-align: center;
+    font-family: arial, helvetica;
+    font-size: 11px;
+    }
+
 </style>
-<script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     MathJax.Hub.Config({
                         TeX: {
                            extensions: ["AMSmath.js"]
@@ -13157,10 +13141,12 @@ div.footer {
                 },
                 displayAlign: 'center', // Change this to 'center' to center equations.
                 "HTML-CSS": {
-                    styles: {'.MathJax_Display': {"margin": 4}}
-                }
+                    styles: {'.MathJax_Display': {"margin": 4}},
+                    linebreaks: { automatic: true }}
         });
 </script>
+
+
 
     </style>
 
@@ -13196,7 +13182,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -13258,7 +13244,7 @@ div#notebook {
     May 2019 - September 2019 &nbsp;&nbsp;&nbsp;&nbsp; Graduate Research Assistant, Temple University
     <ul>
         <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">Development of <a href="https://biceps.readthedocs.io/en/latest/" target="_blank">BICePs 2.0</a><!--</li>
-        <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">--> & Recieved <a href="images/THE.jpg" target="_blank">Teaching in Higher Education Certification</a>;</li>
+        <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">--> & Received <a href="images/THE.jpg" target="_blank">Teaching in Higher Education Certification</a>;</li>
     </ul>
     June 2019 - June 2019 &nbsp;&nbsp;&nbsp;&nbsp; Academic Intern for Computing & Statistics Workshop, Temple University
     <ul>
