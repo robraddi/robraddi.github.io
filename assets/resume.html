@@ -13057,7 +13057,31 @@ ul.typeahead-list  > li > a.pull-right {
 
     </style>
 <style type="text/css">
-    <style>
+    
+
+
+
+<style>
+div.header {
+    display: block; text-align: center;
+    /*position: running(header);*/
+    position: header;
+}
+div.footer {
+    display: block; text-align: right;
+    /*position: running(footer);*/
+    position: footer;
+}
+@page {
+    @top-center { content: element(header) }
+}
+@page {
+    @bottom-center { content: element(footer) }
+}
+
+
+
+<style>
     @font-face {
         font-family: "Computer Modern";
         src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
@@ -13121,16 +13145,8 @@ ul.typeahead-list  > li > a.pull-right {
         margin-top: 0.5em;
         display: block;
     }
-    .footer{
-    text-align: center;
-    font-family: arial, helvetica;
-    font-size: 11px;
-    }
-
 </style>
-<!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script>
     MathJax.Hub.Config({
                         TeX: {
                            extensions: ["AMSmath.js"]
@@ -13141,12 +13157,10 @@ ul.typeahead-list  > li > a.pull-right {
                 },
                 displayAlign: 'center', // Change this to 'center' to center equations.
                 "HTML-CSS": {
-                    styles: {'.MathJax_Display': {"margin": 4}},
-                    linebreaks: { automatic: true }}
+                    styles: {'.MathJax_Display': {"margin": 4}}
+                }
         });
 </script>
-
-
 
     </style>
 
@@ -13227,7 +13241,7 @@ div#notebook {
 
 <!-- Education -->
 <h5 style="align: left;font-size: 12pt;">Education</h5>
-<h4 style="align: left;font-size: 10pt;">2018 - 2023 &nbsp;&nbsp;&nbsp;&nbsp; Ph.D. Theoretical/Physical Chemistry, Temple University; &nbsp;&nbsp;&nbsp;&nbsp;Principal Investigator: Dr. Vincent Voelz
+<h4 style="align: left;font-size: 10pt;">2018 - 2023 &nbsp;&nbsp;&nbsp;&nbsp; Ph.D. Theoretical/Physical Chemistry, Temple University; &nbsp;&nbsp;Advisor: Dr. Vincent Voelz
 </h4>
 <h4 style="align: left;font-size: 10pt;">2013 - 2017 &nbsp;&nbsp;&nbsp;&nbsp; B.S. Chemistry, Temple University &nbsp;&nbsp;&nbsp;&nbsp; <a href="images/ACS.jpg" target="_blank">ACS Certification</a>;</h4>
 
@@ -13237,14 +13251,14 @@ div#notebook {
 <h5 style="align: left;font-size: 12pt;"> History/Experience </h5>
 <h3 style="align: left;font-size: 10pt;">
     September 2019 - Present &nbsp;&nbsp;&nbsp;&nbsp; Teaching Assistant, Temple University
-    <ul>
+    <ul><br>
         <li style="list-style-type: none;font-weight: normal;">Assignment: Physical Chemistry of Biomolecules & General Chemistry I laboratory</li>
         <!--<li style="list-style-type: none;font-size: 10pt;font-weight: normal;"></li>-->
     </ul>
     May 2019 - September 2019 &nbsp;&nbsp;&nbsp;&nbsp; Graduate Research Assistant, Temple University
     <ul>
         <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">Development of <a href="https://biceps.readthedocs.io/en/latest/" target="_blank">BICePs 2.0</a><!--</li>
-        <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">--> & Received <a href="images/THE.jpg" target="_blank">Teaching in Higher Education Certification</a>;</li>
+        <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">--> & Recieved <a href="images/THE.jpg" target="_blank">Teaching in Higher Education Certification</a>;</li>
     </ul>
     June 2019 - June 2019 &nbsp;&nbsp;&nbsp;&nbsp; Academic Intern for Computing & Statistics Workshop, Temple University
     <ul>
@@ -13291,7 +13305,7 @@ div#notebook {
 <p><!-- Other Experience --></p>
 <h5 style="align: left;font-size: 12pt;"> Other Experience </h5><h3 style="align: left;font-size: 10pt;">
     December 2008 - September 2018 &nbsp;&nbsp;&nbsp;&nbsp; Janitor/Handyman, Lords & Ladies Salon and Medical Spa 
-    <ul>
+    <ul><br>
         <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">Responsible for the cleanliness of the floors each week </li>
         <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">Performed repairs and standard maintenance of beauty salon and apartment complex</li>
     </ul>
@@ -13304,7 +13318,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-
+<style>
+div.container {
+    max-width: 760px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+</style>
 </div>
 </div>
 </div>
