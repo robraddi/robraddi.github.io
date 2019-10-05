@@ -13057,31 +13057,7 @@ ul.typeahead-list  > li > a.pull-right {
 
     </style>
 <style type="text/css">
-    
-
-
-
-<style>
-div.header {
-    display: block; text-align: center;
-    /*position: running(header);*/
-    position: header;
-}
-div.footer {
-    display: block; text-align: right;
-    /*position: running(footer);*/
-    position: footer;
-}
-@page {
-    @top-center { content: element(header) }
-}
-@page {
-    @bottom-center { content: element(footer) }
-}
-
-
-
-<style>
+    <style>
     @font-face {
         font-family: "Computer Modern";
         src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
@@ -13145,8 +13121,16 @@ div.footer {
         margin-top: 0.5em;
         display: block;
     }
+    .footer{
+    text-align: center;
+    font-family: arial, helvetica;
+    font-size: 11px;
+    }
+
 </style>
-<script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     MathJax.Hub.Config({
                         TeX: {
                            extensions: ["AMSmath.js"]
@@ -13157,8 +13141,8 @@ div.footer {
                 },
                 displayAlign: 'center', // Change this to 'center' to center equations.
                 "HTML-CSS": {
-                    styles: {'.MathJax_Display': {"margin": 4}}
-                }
+                    styles: {'.MathJax_Display': {"margin": 4}},
+                    linebreaks: { automatic: true }}
         });
 </script>
 
@@ -13196,7 +13180,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -13223,76 +13207,69 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 style="align: center;font-size: 16pt;"> Robert M. Raddi</h1>
-<h1 style="align: center;font-size: 12pt;"> Graduate Research Assistant in the Voelz lab at Temple University Philadelphia, PA</h1>
-<h1 style="align: center;font-size: 10pt;">Phone: 267-312-0604; Email: rraddi@temple.edu; Website: <a href="https://robraddi.github.io">robraddi.github.io</a>;  Github: <a href="https://github.com/robraddi">github.com/robraddi</a></h1><hr style="height:2.5px">
+<p><!-- Heading --></p>
+<p><h1 style="text-align: center;font-size: 16pt;color: #3234a8"> Robert M. Raddi</h1></p>
+<p><h1 style="text-align: center;font-size: 12pt;"> Graduate Research Assistant in the Voelz lab at Temple University Philadelphia, PA</h1></p>
+<p><p style="text-align: center;font-size: 10pt;"><b>Phone:</b> 267-312-0604; <b>Email:</b> rraddi@temple.edu; <b>Website:</b> <a href="https://robraddi.github.io">robraddi.github.io</a>;  <b>Github:</b> <a href="https://github.com/robraddi">github.com/robraddi</a></p></p>
+<hr style="height:2.5px">
 
-<!-- Summary -->
-<h5 style="align: left;font-size: 12pt;"> Summary </h5>
-<ul>
+<p><!-- Summary --></p>
+<p><h5 style="align: left;font-size: 12pt;font-weight: bold;"> Summary </h5></p>
+<p><ul>
     <li style="list-style-type: none;font-size: 10pt;">Proficient in various programming languages & packaging modules</li>
-    <li style="list-style-type: none;font-size: 10pt">Constructed simulation code from scratch (MCMC & MD) as toy models</li>
-    <li style="list-style-type: none;font-size: 10pt">Strong statistical modeling (Bayesian Inference, Markov state models) & data analysis skills</li>
-    <li style="list-style-type: none;font-size: 10pt">Research experience in binding mechanisms of proteins</li>
-    <li style="list-style-type: none;font-size: 10pt">Experience using high-performance computing clusters</li>
-</ul>
-
+    <li style="list-style-type: none;font-size: 10pt;">Able to construct simulation code from scratch (MCMC & MD)</li>
+    <li style="list-style-type: none;font-size: 10pt;">Strong statistical modeling (Bayesian Inference, Markov state models) & data analysis skills</li>
+    <li style="list-style-type: none;font-size: 10pt;">Research experience in Biophysics/Chemistry</li>
+</ul></p>
 <hr style="height:2.5px">
 
-<!-- Education -->
-<h5 style="align: left;font-size: 12pt;">Education</h5>
-<h4 style="align: left;font-size: 10pt;">2018 - 2023 &nbsp;&nbsp;&nbsp;&nbsp; Ph.D. Theoretical/Physical Chemistry, Temple University; &nbsp;&nbsp;Advisor: Dr. Vincent Voelz
-</h4>
-<h4 style="align: left;font-size: 10pt;">2013 - 2017 &nbsp;&nbsp;&nbsp;&nbsp; B.S. Chemistry, Temple University &nbsp;&nbsp;&nbsp;&nbsp; <a href="images/ACS.jpg" target="_blank">ACS Certification</a>;</h4>
-
+<p><!-- Education --></p>
+<p><h5 style="align: left;font-size: 12pt;font-weight: bold;">Education</h5></p>
+<p><h4 style="align: left;font-size: 10pt;"><span class="em" style="color: #a0a140">2018 - 2023</span> &nbsp;&nbsp;&nbsp;&nbsp; Ph.D. Theoretical/Physical Chemistry, Temple University; &nbsp;&nbsp;Advisor: Dr. Vincent Voelz
+</h4></p>
+<p><h4 style="align: left;font-size: 10pt;"><span class="em" style="color: #a0a140">2013 - 2017</span> &nbsp;&nbsp;&nbsp;&nbsp; B.S. Chemistry, Temple University &nbsp;&nbsp;&nbsp;&nbsp; <a href="images/ACS.jpg" target="_blank">ACS Certification</a>;</h4></p>
 <hr style="height:2.5px">
 
-<!-- History/Experience -->
-<h5 style="align: left;font-size: 12pt;"> History/Experience </h5>
+<p><!-- History/Experience --></p>
+<p><h5 style="align: left;font-size: 12pt;font-weight: bold;"> History/Experience </h5></p>
 <h3 style="align: left;font-size: 10pt;">
-    September 2019 - Present &nbsp;&nbsp;&nbsp;&nbsp; Teaching Assistant, Temple University
-    <ul><br>
-        <li style="list-style-type: none;font-weight: normal;">Assignment: Physical Chemistry of Biomolecules & General Chemistry I laboratory</li>
+    <span class="em" style="color: #a0a140">September 2019 - Present</span> &nbsp;&nbsp;&nbsp;&nbsp; Teaching Assistant, Temple University
+    <ul>
+        <li style="list-style-type: none;font-weight: normal;"><b>Assignment:</b> Physical Chemistry of Biomolecules & General Chemistry I laboratory</li>
         <!--<li style="list-style-type: none;font-size: 10pt;font-weight: normal;"></li>-->
     </ul>
-    May 2019 - September 2019 &nbsp;&nbsp;&nbsp;&nbsp; Graduate Research Assistant, Temple University
+    <span class="em" style="color: #a0a140">May 2019 - September 2019</span> &nbsp;&nbsp;&nbsp;&nbsp; Graduate Research Assistant, Temple University
     <ul>
         <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">Development of <a href="https://biceps.readthedocs.io/en/latest/" target="_blank">BICePs 2.0</a><!--</li>
         <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">--> & Recieved <a href="images/THE.jpg" target="_blank">Teaching in Higher Education Certification</a>;</li>
     </ul>
-    June 2019 - June 2019 &nbsp;&nbsp;&nbsp;&nbsp; Academic Intern for Computing & Statistics Workshop, Temple University
+    <span class="em" style="color: #a0a140">June 2019 - June 2019</span> &nbsp;&nbsp;&nbsp;&nbsp; Academic Intern for Computing & Statistics Workshop, Temple University
     <ul>
         <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">This 2-week graduate level summer workshop of ~30 students was organized by Matthew Newby (Physics), Vincent Voelz (Chemistry) and Adrienn Ruzsinszky (Physics).  I contributed to some lecture material (slides), helped students one-on-one and answered various questions regarding Python, Bash, Jupyter Notebooks, GitHub, etc. (basic programming fundamentals). Website: <a href="https://sites.temple.edu/compstat/">sites.temple.edu/compstat</a></li>
     </ul>
-    January 2019 - April 2019 &nbsp;&nbsp;&nbsp;&nbsp; Teaching Assistant, Temple University
+    <span class="em" style="color: #a0a140">January 2019 - April 2019</span> &nbsp;&nbsp;&nbsp;&nbsp; Teaching Assistant, Temple University
     <ul>
-        <li style="list-style-type: none;font-weight: normal;">Assignment: Chemistry for Engineers recitation & General Chemistry II laboratory</li>
+        <li style="list-style-type: none;font-weight: normal;"><b>Assignment:</b> Chemistry for Engineers recitation & General Chemistry II laboratory</li>
     </ul>
-    September 2018 - December 2018 &nbsp;&nbsp;&nbsp;&nbsp; Teaching Assistant, Temple University
+    <span class="em" style="color: #a0a140">September 2018 - December 2018</span> &nbsp;&nbsp;&nbsp;&nbsp; Teaching Assistant, Temple University
     <ul>
-        <li style="list-style-type: none;font-weight: normal;">Assignment: General Chemistry I recitation & laboratory</li>
+        <li style="list-style-type: none;font-weight: normal;"><b>Assignment:</b> General Chemistry I recitation & laboratory</li>
     </ul>
-    December 2016 - September 2018 &nbsp;&nbsp;&nbsp;&nbsp; Undergraduate Research, Temple University
-
+    <span class="em" style="color: #a0a140">December 2016 - September 2018</span> &nbsp;&nbsp;&nbsp;&nbsp; Undergraduate Research, Temple University
 </h3>
-
 <hr style="height:2.5px">
 
 <!-- Publications -->
-<h5 style="align: left;font-size: 12pt;">Publications</h5>
-
+<h5 style="align: left;font-size: 12pt;font-weight: bold;">Publications</h5>
 <h6 style="align: left;font-size: 10pt;">1. BICePs 2.0: new tools for Bayesian Inference of Conformational Populations from Theory and Experiment. Yunhui Ge*, Rob Raddi*, Vincent Voelz. In prep.</h6>
-
 <hr style="height:2.5px">
 
 <!-- Skills & Languages -->
-<h5 style="align: left;font-size: 12pt;">Skills & Languages</h5>
-<h4 style="align: left;font-size: 10pt;">Primary Programming Languages: Python, C++, Bash, Visual Basic for Applications (Microsoft Excel macros)</h4>
-<h4 style="align: left;font-size: 10pt;">Markup Languages: Markdown, HTML, LaTex</h4>
-<h4 style="align: left;font-size: 10pt;">High performance computing platforms: Owlsnest computing clusters, Folding@home distributed computing platform</h4>
-<h4 style="align: left;font-size: 10pt;">Proficient with the following programs: LabView & AutoCAD (engineering software), Gromacs & OpenMM(molecular dynamics simulations), Chimera & VMD-Visual Molecular Dynamics (interactive molecular visualization), mMASS (Mass spectrometry data acquisition and processing), TopSpin (NMR data acquisition and processing)</h4>
-
-
+<h5 style="align: left;font-size: 12pt;font-weight: bold;">Skills & Languages</h5>
+<p style="align: left;font-size: 10pt;"><b>Primary Programming Languages:</b> Python, C++, Bash, Visual Basic for Applications (Microsoft Excel macros)</p>
+<p style="align: left;font-size: 10pt;"><b>Markup Languages:</b> Markdown, HTML, LaTex</p>
+<p style="align: left;font-size: 10pt;"><b>High performance computing</b> (Owlsnest), <b>Distributed computing platform</b> (Folding@home) </h4>
+<p style="align: left;font-size: 10pt;"><b>Proficient with the following programs:</b> LabView & AutoCAD (engineering software), Gromacs & OpenMM(molecular dynamics simulations), Chimera & VMD-Visual Molecular Dynamics (interactive molecular visualization), mMASS (Mass spectrometry data acquisition and processing), TopSpin (NMR data acquisition and processing)</p>
 <hr style="height:2.5px">
 
 <!-- Honors & Awards -->
@@ -13301,16 +13278,15 @@ div#notebook {
 <a href="images/THE.jpg" target="_blank">Teaching in Higher Education Certification</a>;
 <hr style="height:2.5px">
 -->
-
-<p><!-- Other Experience --></p>
-<h5 style="align: left;font-size: 12pt;"> Other Experience </h5><h3 style="align: left;font-size: 10pt;">
-    December 2008 - September 2018 &nbsp;&nbsp;&nbsp;&nbsp; Janitor/Handyman, Lords & Ladies Salon and Medical Spa 
+<!-- Other Experience -->
+<h5 style="align: left;font-size: 12pt;font-weight: bold;"> Other Experience </h5>
+<h3 style="align: left;font-size: 10pt;">
+    <span class="em" style="color: #a0a140">December 2008 - September 2018</span> &nbsp;&nbsp;&nbsp;&nbsp; Janitor/Handyman, Lords & Ladies Salon and Medical Spa 
     <ul><br>
         <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">Responsible for the cleanliness of the floors each week </li>
         <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">Performed repairs and standard maintenance of beauty salon and apartment complex</li>
     </ul>
-    August 2011 - March 2014 &nbsp;&nbsp;&nbsp;&nbsp; Detailer/Lot Attendant/Shuttle Driver, Peruzzi Nissan Buick GMC 
-
+    <span class="em" style="color: #a0a140">August 2011 - March 2014</span> &nbsp;&nbsp;&nbsp;&nbsp; Detailer/Lot Attendant/Shuttle Driver, Peruzzi Nissan Buick GMC 
 </h3>
 </div>
 </div>
@@ -13328,6 +13304,17 @@ div.container {
     margin-left: auto !important;
     margin-right: auto !important;
     margin-bottom: auto !important;
+}
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 </style>
 </div>
