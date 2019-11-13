@@ -1,0 +1,81 @@
+---
+layout: default
+title: Posts
+---
+
+<!-- Author: Rob Raddi -->
+
+<div class="section-title h2">Posts:</div>
+
+
+
+
+<!-- Posts Index
+================================================== -->
+{% if paginator.previous_page %}
+{% if paginator.previous_page > 0 %}
+<div id="jumptopageof"></div>
+{% endif %}
+{% endif %}
+
+
+<section class="featured-posts">
+
+    <!-- List by Category -->
+    <section class="recent-posts row">
+    {% for category in site.categories %}
+        <div class="sidebar-section">
+            <div class="col-sm-12">
+                <h5><span> {{ category[0] }} </span></h5>
+    	        <ul>
+                {% for post in category[1] %}
+	            {% if post.featured == true %}
+    		        <!-- See this file for more information regarding post
+    	                ~/github/robraddi.github.io/_layouts
+    		        -->
+    		        <li style="list-style-type: none;"><a href="{{ post.url }}"> {{ post.title }} : {{ post.date | date:"%m-%d-%Y"}} </a></li>
+	            {% endif %}
+                {% endfor %}
+    	        </ul>
+            </div>
+        </div>
+    {% endfor %}
+    </section>
+</section>
+
+
+<!-- Need to hardcode each of the talks that you have here: -->
+<div class="section-title h2">Slides:</div>
+<section class="featured-posts">
+    <!-- List by Category -->
+    <section class="recent-posts row">
+        <div class="sidebar-section">
+            <div class="col-sm-12">
+                <h5><span>MD Simulations</span></h5>
+    	        <ul>
+    		    <li style="list-style-type: none;"><a href="{{ site.url }}/sandbox/2D-MD_simulation/2D-MD.slides.html">Reentrant Phase Behavior</a></li>
+    		    <li style="list-style-type: none;"><a href="{{ site.url }}/sandbox/Quantifying_Uncertainty_in_Simulations/UQ_in_simulations.slides.html">Quantifying Uncertainty in Simulations</a></li>
+    	        </ul>
+                <h5><span></span></h5>
+    	        <ul>
+    	        </ul>
+            </div>
+        </div>
+        <div class="sidebar-section">
+            <div class="col-sm-12">
+                <h5><span>Talks</span></h5>
+    	        <ul>
+			<li style="list-style-type: none;"><a href="{{ site.url }}/sandbox/Literature_Seminar/Literature_Seminar.slides.html">Bridging Theory & Experiment with Metainference — a Bayesian Inference Approach: 12-11-2019</a></li>
+    	        </ul>
+                <h5><span></span></h5>
+    	        <ul>
+    	        </ul>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+
+
+

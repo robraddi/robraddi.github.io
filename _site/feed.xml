@@ -5,9 +5,180 @@
     <description>Pages to view my work.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 03 Aug 2019 17:40:52 -0400</pubDate>
-    <lastBuildDate>Sat, 03 Aug 2019 17:40:52 -0400</lastBuildDate>
+    <pubDate>Wed, 13 Nov 2019 15:43:24 -0500</pubDate>
+    <lastBuildDate>Wed, 13 Nov 2019 15:43:24 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>git-revert Vs. git-reset</title>
+        <description>&lt;h1 id=&quot;-git-revert-vs--git-reset&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git revert&lt;/code&gt; Vs. &lt;code class=&quot;highlighter-rouge&quot;&gt;$ git reset&lt;/code&gt;&lt;/h1&gt;
+
+&lt;h3 id=&quot;git-revert&quot;&gt;git-revert&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;creates a new commit that undoes the changes from a previous commit.
+    &lt;ul&gt;
+      &lt;li&gt;adds new history&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;± git add &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;file]&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; git push
+
+Enumerating objects:
+...
+   dc93c84..3dac56a  master -&amp;gt; master
+
+&lt;span class=&quot;c&quot;&gt;# Note: 3dac56a is the parent of the latest commit.&lt;/span&gt;
+
+± git revert 3dac56a 
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;master 7321501] Revert &lt;span class=&quot;s2&quot;&gt;&quot;here goes the mistake...&quot;&lt;/span&gt;
+ 1 file changed, 1 deletion&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;-&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+ delete mode 100644 mistake.txt
+
+± git push
+
+&lt;span class=&quot;c&quot;&gt;# NOTE: you can check your commits with&lt;/span&gt;
+± git rev-list &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--abbrev-commit&lt;/span&gt; HEAD
+7321501
+3dac56a
+dc93c84
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;git-reset&quot;&gt;git-reset&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reset current HEAD to the specified state
+    &lt;ul&gt;
+      &lt;li&gt;could possibly remove history&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;± git add &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;file]&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; git push
+
+Enumerating objects:
+...
+   dc93c84..3dac56a  master -&amp;gt; master
+
+&lt;span class=&quot;c&quot;&gt;# Note:  dc93c84 is the parent of the commit you wish to go back to.&lt;/span&gt;
+
+± git reset &lt;span class=&quot;nt&quot;&gt;--hard&lt;/span&gt; dc93c84
+
+HEAD is now at dc93c84 Revert &lt;span class=&quot;s2&quot;&gt;&quot;message&quot;&lt;/span&gt;
+
+± git push &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt;
+
+
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 07 Aug 2019 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/git/2019/08/07/git-revert-Vs-git-reset.html</link>
+        <guid isPermaLink="true">http://localhost:4000/git/2019/08/07/git-revert-Vs-git-reset.html</guid>
+        
+        
+        <category>Git</category>
+        
+      </item>
+    
+      <item>
+        <title>git-branch &amp; git-merge</title>
+        <description>&lt;h1 id=&quot;quick-note&quot;&gt;Quick Note:&lt;/h1&gt;
+&lt;h3 id=&quot;always-commit-with-a-useful-message-otherwise-your-history-will-be-useless&quot;&gt;&lt;strong&gt;Always commit with a useful message.&lt;/strong&gt; Otherwise, your history will be useless…&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Show your most recent commits&lt;/span&gt;
+git show-branch &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Assuming prior knowledge of&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git pull&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; git add&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; git commit&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; git push
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;todo&quot;&gt;#&lt;span style=&quot;color:red&quot;&gt;TODO&lt;/span&gt;:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Fork&lt;/strong&gt; a repository: &lt;a href=&quot;https://github.com/octocat/Spoon-Knife&quot;&gt;octocat/Spoon-Knife&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a new &lt;strong&gt;branch&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make changes to existing code or develop code.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Merge&lt;/strong&gt; your new branch to the master branch to create a &lt;strong&gt;Pull Request&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;after-forking-octocatspoon-knife--get-a-local-copy&quot;&gt;After forking octocat/Spoon-Knife — get a local copy:&lt;/h1&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/USERNAME/Spoon-Knife.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;creating-a-new-branch&quot;&gt;Creating a new branch&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://wac-cdn.atlassian.com/dam/jcr:fcad863b-e0da-4a55-92ee-7caf4988e34e/02.svg?cdnVersion=le&quot; width=&quot;400&quot; height=&quot;400&quot; align=&quot;right&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;new branch]
+git checkout &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;new branch]      &lt;span class=&quot;c&quot;&gt;# git checkout -b [new branch]&lt;/span&gt;
+git add &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;stuff/work]
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;my new work&quot;&lt;/span&gt;
+git push &lt;span class=&quot;nt&quot;&gt;--set-upstream&lt;/span&gt; origin &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;new branch]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;check-whats-been-done&quot;&gt;Check what’s been done:&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git show-branch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;merging-new-branch-to-another-branch&quot;&gt;Merging new branch to another branch&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch]
+git merge &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;new branch]
+git push origin &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;now-in-your-browser-create-a-pull-request&quot;&gt;Now, in your browser create a &lt;strong&gt;pull request&lt;/strong&gt;.&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;footer&gt; https://www.atlassian.com/git/tutorials/why-git&lt;/footer&gt;
+
+&lt;h2 id=&quot;fetching-the-pull-request-for-maintainer&quot;&gt;Fetching the Pull Request (For Maintainer):&lt;/h2&gt;
+
+&lt;h2 id=&quot;step-1-from-your-project-repository-bring-in-the-changes-and-test&quot;&gt;Step 1: From your project repository, bring in the changes and test.&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git fetch origin
+git checkout &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;new branch] origin/[new branch]
+git merge master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;step-2-merge-the-changes-and-update-on-github&quot;&gt;Step 2: Merge the changes and update on GitHub.&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout master
+git merge &lt;span class=&quot;nt&quot;&gt;--no-ff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;new branch]
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;other-notes&quot;&gt;Other Notes:&lt;/h1&gt;
+
+&lt;h3 id=&quot;information-commands-to-learn-about-git&quot;&gt;Information commands to learn about git&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;man giteveryday
+
+man gittutorial
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 07 Aug 2019 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/git/2019/08/07/Branching-and-Merging.html</link>
+        <guid isPermaLink="true">http://localhost:4000/git/2019/08/07/Branching-and-Merging.html</guid>
+        
+        
+        <category>Git</category>
+        
+      </item>
     
       <item>
         <title>Packaging Python Modules</title>
@@ -77,13 +248,11 @@ anaconda upload /path/to/conda-package.tar.bz2
 
 </description>
         <pubDate>Mon, 29 Jul 2019 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/pip/conda/2019/07/29/Packaging-Python-Modules.html</link>
-        <guid isPermaLink="true">http://localhost:4000/pip/conda/2019/07/29/Packaging-Python-Modules.html</guid>
+        <link>http://localhost:4000/pip%20&%20conda/2019/07/29/Packaging-Python-Modules.html</link>
+        <guid isPermaLink="true">http://localhost:4000/pip%20&%20conda/2019/07/29/Packaging-Python-Modules.html</guid>
         
         
-        <category>Pip</category>
-        
-        <category>Conda</category>
+        <category>Pip &amp; Conda</category>
         
       </item>
     

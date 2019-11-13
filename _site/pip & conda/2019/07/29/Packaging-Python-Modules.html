@@ -13,13 +13,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="I. Protocol for setting up pip install" />
 <meta property="og:description" content="I. Protocol for setting up pip install" />
-<link rel="canonical" href="http://localhost:4000/pip/conda/2019/07/29/Packaging-Python-Modules.html" />
-<meta property="og:url" content="http://localhost:4000/pip/conda/2019/07/29/Packaging-Python-Modules.html" />
+<link rel="canonical" href="http://localhost:4000/pip%20&%20conda/2019/07/29/Packaging-Python-Modules.html" />
+<meta property="og:url" content="http://localhost:4000/pip%20&%20conda/2019/07/29/Packaging-Python-Modules.html" />
 <meta property="og:site_name" content="Rob Raddi" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-07-29T00:00:00-04:00" />
 <script type="application/ld+json">
-{"description":"I. Protocol for setting up pip install","author":{"@type":"Person","name":"Rob"},"@type":"BlogPosting","url":"http://localhost:4000/pip/conda/2019/07/29/Packaging-Python-Modules.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Rob"},"headline":"Packaging Python Modules","dateModified":"2019-07-29T00:00:00-04:00","datePublished":"2019-07-29T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/pip/conda/2019/07/29/Packaging-Python-Modules.html"},"@context":"http://schema.org"}</script>
+{"description":"I. Protocol for setting up pip install","author":{"@type":"Person","name":"Rob"},"@type":"BlogPosting","url":"http://localhost:4000/pip%20&%20conda/2019/07/29/Packaging-Python-Modules.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Rob"},"headline":"Packaging Python Modules","dateModified":"2019-07-29T00:00:00-04:00","datePublished":"2019-07-29T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/pip%20&%20conda/2019/07/29/Packaging-Python-Modules.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -65,22 +65,32 @@
                     <a class="nav-link" href="/about">About</a>
                 </li>
                 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="nav-link" href="/">Projects</a>
+                    <a class="nav-link" href="/">Publications</a>
+                    </div>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/teaching.html">Teaching</a>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Software</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="nav-link" href="https://biceps.readthedocs.io/en/latest/" target="_blank">BICePs</a>
+                    <a class="nav-link" href="/SymPyVolume/index.html" target="_blank">SymPyVolume</a>
                     </div>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="/posts.html">Posts</a>
+                    <a class="nav-link" href="/posts_and_slides.html">Posts/Slides</a>
                 </li>
-                <li class="nav-item">
+                <!--<li class="nav-item">
                     <a class="nav-link" href="/about.html">About</a>
-                </li>
+		</li>-->
                 <li class="nav-item">
                     <a target="_blank" class="nav-link" href="https://github.com/robraddi">Github</a>
                 </li>
@@ -146,11 +156,7 @@
                         
                         
                         <li>
-                         <a href="/category/conda/">Conda</a>
-                        </li>
-                        
-                        <li>
-                         <a href="/category/pip/">Pip</a>
+                         <a href="/category/pip-conda/">Pip & Conda</a>
                         </li>
                         
                     </ul>
@@ -250,6 +256,10 @@ anaconda upload /path/to/conda-package.tar.bz2
             <div class="row PageNavigation mt-4 prevnextlinks">
               
               
+                <div class="col-md-6 text-right pr-0">
+                    <a class="thepostlink" href="http://localhost:4000/git/2019/08/07/Branching-and-Merging.html">git-branch & git-merge &raquo;</a>
+                </div>
+              
             </div>
             <!-- End Prev/Next -->
 
@@ -348,25 +358,40 @@ anaconda upload /path/to/conda-package.tar.bz2
                 -->
 
 		<!-- Contact information -->
-		<p>MAILING ADDRESS:<br>
+		<p>Mailing Address:<br>
                 1901 N. 13th St.<br>
 		Beury Hall Room 102<br>
 		Temple University,<br>
 		Philadelphia, PA 19122<br>
 		</p>
 
+
                 </div>
                 </div>
 
                 <div class="col-sm-4">
                 <div class="footer-widget">
-                <h5 class="title"></h5>
+			<!--<h5 class="title"></h5>-->
+                <h5 class="title">Contact Info:</h5>
                 <ul>
                 <li>Office: Beury Hall, Room 102</li>
                 <li>Email: <a target="_blank" href="rraddi@temple.edu">rraddi@temple.edu</a></li>
                 <li>GitHub: <a target="blank" href="https://github.com/robraddi">https://github.com/robraddi</a></li>
                 <li>LinkedIn: <a target="blank" href="https://www.linkedin.com/in/rraddi">https://www.linkedin.com/in/rraddi</a></li>
                 </ul>
+                </div>
+                </div>
+
+                <div class="col-sm-4">
+                <div class="footer-widget">
+                <h5 class="title">Additional Info:</h5>
+
+                <p style="text-align:left;font-size:100%;">
+		<ul>
+			<li><a href="/assets/resume.html" target="_blank">Resume</a></li>
+			<!--<li><a href="/notes.html" target="_blank">Notes</a></li>-->
+		</ul>
+                    <br>
                 </div>
                 </div>
 
@@ -381,6 +406,9 @@ anaconda upload /path/to/conda-package.tar.bz2
                 -->
 
             </div>
+
+
+
 
             <div class="copyright">
                 <p class="pull-left">
