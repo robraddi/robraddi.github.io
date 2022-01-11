@@ -33,11 +33,11 @@ detailsElement.addEventListener('toggle', event => {
 <!-- Timeline -->
 <style type="text/css">
 .timeline{
-  width:100%;
+  width:800px;
   /*background-color:#072736;*/
   color:#fff;
-  padding:30px 70px;
-  /*box-shadow:0px 0px 10px rgba(0,0,0,.5);*/
+  padding:30px 20px;
+  box-shadow:0px 0px 10px rgba(0,0,0,.5);
 }
 .timeline ul{
   list-style-type:none;
@@ -45,7 +45,7 @@ detailsElement.addEventListener('toggle', event => {
   padding:10px 5px;
 }
 .timeline ul li{
-  padding:20px 0px 0px 5px;
+  padding:20px 20px;
   position:relative;
   /*cursor:pointer;*/
   transition:.5s;
@@ -57,26 +57,17 @@ detailsElement.addEventListener('toggle', event => {
   color: black;
   font-weight: bold;
   padding: 2px 5px;
-  font-size: 12pt;
+  font-size: 15px;
   text-align: center;
 }
 .timeline ul li .content h3{
-  color: #34ace0;
-  font-size: 12pt;
-  padding-top: 5px;
+  color:#34ace0;
+  font-size:17px;
+  padding-top:5px;
 }
-
-.timeline ul h4{
-  color: black;
-  font-size: 13pt;
-  position: absolute;
-  margin-left: -90px;
-  padding: -10px 0px;
-}
-
 .timeline ul li .content p{
-  padding: 5px 0px 15px 0px;
-  font-size: 11pt;
+  padding:5px 0px 15px 0px;
+  font-size:15px;
   color:black;
 }
 .timeline ul li:before{
@@ -13206,25 +13197,6 @@ ul.typeahead-list  > li > a.pull-right {
     font-size: 11px;
     }
 
-div.align-center {
-  font-size: 100%;
-  position: relative !important;
-  display: flex !important;
-  flex-direction: row !important;
-  min-height: 100% !important;
-  min-width: 100% !important;
-  margin-top: auto !important;
-  margin-bottom: auto !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  z-index: 999 !important;
-  text-align: center !important;
-  vertical-align: center !important;
-  justify-content: center !important;
-
-}
-
-
 </style>
 <!-- MathJax configuration -->
 <script type="text/x-mathjax-config">
@@ -13362,11 +13334,35 @@ summary:hover{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+  <h3>Research Summary:</h3>
+  <p>The broad view of my research focuses on developing machine learning methods that
+combine theory and experiment to tackle problems in structural biology and cheminformatics.
+My first original research proposal resulted in a first authorship and a submission to the SAMPL7
+challenge.  Since then, I have submitted in the SAMPL8 physical property challenge to study the
+effects of various machine learning models using our in-house database that I curated.  In addition,
+with the help of some lab members, we have just recently submitted in the SAMPL9 host-guest challenge.
+The main focus of my dissertation research is centered around the algorithm BICePs (Bayesiain Inference of conformational populations),
+which is designed for force field validation and parameterization. </p>
+<p>The BICePs has recently been turned into a Python 3 module and labeled BICePs 2.0 with
+  documentation, enhanced analysis and MCMC convergence checking. </p>
+<p>My current work
+</p>
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <!-- Heading -->
 <div class="row" >
   <!-- Name and Job title -->
-
-    <div class="align-center">
   <div class="col-md-6" style="width:78%;padding-right: 10px;margin-left:0px;">
     <a href="https://robraddi.github.io" style="text-decoration: none"><h1 style="text-align: center;font-size: 16pt;color: #3234a8"> Robert M. Raddi</h1></a>
     <h2 style="text-align: center;font-size: 12pt;">Theoretical Chemist/Graduate Research Assistant</h2>
@@ -13391,7 +13387,7 @@ summary:hover{
 
   </div>
 
-  <div class="col-md-3" style="horizontial-align:middle;font-size:58%;width:20%;padding-left: 0px;padding-right: 5px;float:right">
+  <div class="col-md-3" style="font-size:58%;width:20%;padding-left: 0px;padding-right: 5px;float:right">
     <!-- Short Address -->
     <div style="text-align: left;">
       <img src="https://e7.pngegg.com/pngimages/703/597/png-clipart-logo-house-home-house-angle-building-thumbnail.png" width="20px" align="left" style="vertical-align:middle">
@@ -13447,23 +13443,12 @@ summary:hover{
     </p>
     -->
   </div>
-  </div>
 </div>
 
 
-<hr style="height:2.5px">
 
-<!-- Skills & Languages -->
-<h5 style="align: left;font-size: 12pt;font-weight: bold;">Skills</h5>
-<p style="align: left;font-size: 10pt;"><b>Primary Programming Languages:</b> Python, C/C++, Bash, Visual Basic for Applications (Microsoft Excel macros)</p>
-<p style="align: left;font-size: 10pt;"><b>Markup Languages:</b> Markdown, HTML/CSS, LaTex</p>
-<p style="align: left;font-size: 10pt;"><b>High performance computing</b> (Owlsnest), <b>Distributed computing platform</b> (Folding@home) </h4>
-<!--
-<p style="align: left;font-size: 10pt;"><b>Proficient with the following programs:</b> LabView & AutoCAD (engineering software), Gromacs & OpenMM(molecular dynamics simulations), Chimera & VMD-Visual Molecular Dynamics (interactive molecular visualization), mMASS (Mass spectrometry data acquisition and processing), TopSpin (NMR data acquisition and processing)</p>
--->
 
 <hr style="height:2.5px">
-
 
 <!-- Education -->
 <h5 style="align: left;font-size: 12pt;font-weight: bold;">Education</h5>
@@ -13472,12 +13457,13 @@ summary:hover{
 <h4 style="align: left;font-size: 10pt;"><span class="em" style="color: #a0a140">2013 - 2017</span> &nbsp;&nbsp;&nbsp;&nbsp; B.S. Chemistry, Temple University &nbsp;&nbsp;&nbsp;&nbsp; <a href="images/ACS.jpg" target="_blank">ACS Certification</a>;</h4>
 -->
 
+
 <div class="row" style="horizontial-align: center">
   <div class="col-md-8" style="width:80%;margin:0px;padding-right: 10px;margin-left:0px;font-size:85%">
-    <span style="font-weight: bold;font-size:110%;margin-top:0px;">Temple University</span>
-    &nbsp;&nbsp;&nbsp;&nbsp;Doctor of Philosophy - PhD, Theoretical Chemistry<br> Advisor: Dr. Vincent Voelz
+    <span style="font-weight: bold;font-size:110%;margin-top:0px;">Temple University</span><br>
+    Doctor of Philosophy — PhD, Theoretical Chemistry; &nbsp;&nbsp;Advisor: Dr. Vincent Voelz
   </div>
-  <div class="col-md-2" style="text-align:right;width:15%;margin:0px;padding-right: 0px;float: right">
+  <div class="col-md-2" style="width:10%;margin:0px;padding-right: 0px;float: right">
     <span class="em" style="color: #a0a140">2018 - 2023</span>
     </p>
   </div>
@@ -13485,10 +13471,10 @@ summary:hover{
 
 <div class="row" style="horizontial-align: center">
   <div class="col-md-8" style="width:80%;margin:0px;padding-right: 10px;margin-left:0px;font-size:85%">
-    <span style="font-weight: bold;font-size:110%;margin-top:0px;">Temple University</span>
-    &nbsp;&nbsp;&nbsp;&nbsp;Bachlors of Science — B.S, Chemistry;
+    <span style="font-weight: bold;font-size:110%;margin-top:0px;">Temple University</span><br>
+    Bachlors of Science — B.S, Chemistry;
   </div>
-  <div class="col-md-2" style="text-align:right;width:15%;margin:0px;padding-right: 0px;float: right">
+  <div class="col-md-2" style="width:10%;margin:0px;padding-right: 0px;float: right">
     <span class="em" style="color: #a0a140">2013 - 2017</span>
     </p>
   </div>
@@ -13502,6 +13488,87 @@ Cause Education
 NFCS students visit Temple University Chemistry Department and complete a project which I have designed for their academic interests.
 Volunteer sessions: November 2018, March 2019
 -->
+
+
+<hr style="height:2.5px">
+
+<!-- History/Experience -->
+<p><h5 style="align: left;font-size: 12pt;font-weight: bold;"> History/Experience </h5></p>
+<h3 style="align: left;font-size: 10pt;">
+    <span class="em" style="color: #a0a140">January 2020 - April 2020</span> &nbsp;&nbsp;&nbsp;&nbsp; Teaching Assistant, Temple University
+    <p style="margin-left:20px;font-weight: normal;"><b>Assignment:</b> Physical Chemistry of Biomolecules & Techniques of Chemical Measurement II</p>
+    <span class="em" style="color: #a0a140">September 2019 - December 2019</span> &nbsp;&nbsp;&nbsp;&nbsp; Teaching Assistant, Temple University
+    <p style="margin-left:20px;font-weight: normal;"><b>Assignment:</b> Physical Chemistry of Biomolecules & General Chemistry I laboratory</p>
+    <p style="margin-left:20px;font-weight: normal;"><b>Awards:</b> <a href="images/GuyAllen_2019.jpg" target="_blank">the Guy Allen award</a> for outstanding teaching</p>
+    <!--<p style="margin-left:20px;font-size: 10pt;font-weight: normal;"></p>-->
+    <span class="em" style="color: #a0a140">May 2019 - September 2019</span> &nbsp;&nbsp;&nbsp;&nbsp; Graduate Research Assistant, Temple University
+    <p style="margin-left:20px;font-size: 10pt;font-weight: normal;">Development of <a href="https://biceps.readthedocs.io/en/latest/" target="_blank">BICePs 2.0</a><!--</p>
+    <p style="margin-left:20px;font-size: 10pt;font-weight: normal;">--> & Was awarded <a href="images/THE.jpg" target="_blank">Teaching in Higher Education Certification</a>;</p>
+    <span class="em" style="color: #a0a140">June 2019 - June 2019</span> &nbsp;&nbsp;&nbsp;&nbsp; Academic Intern for Computing & Statistics Workshop, Temple University
+    <p style="margin-left:20px;font-size: 10pt;font-weight: normal;">This 2-week graduate level summer workshop of ~30 students was organized by Matthew Newby (Physics), Vincent Voelz (Chemistry) and Adrienn Ruzsinszky (Physics).  I contributed to some lecture material (spdes), helped students one-on-one and answered various questions regarding Python, Bash, Jupyter Notebooks, GitHub, etc. (basic programming fundamentals). Website: <a href="https://sites.temple.edu/compstat/">sites.temple.edu/compstat</a></p>
+    <span class="em" style="color: #a0a140">January 2019 - April 2019</span> &nbsp;&nbsp;&nbsp;&nbsp; Teaching Assistant, Temple University
+    <p style="margin-left:20px;font-weight: normal;"><b>Assignment:</b> Chemistry for Engineers recitation & General Chemistry II laboratory</p>
+    <span class="em" style="color: #a0a140">September 2018 - December 2018</span> &nbsp;&nbsp;&nbsp;&nbsp; Teaching Assistant, Temple University
+    <p style="margin-left:20px;font-weight: normal;"><b>Assignment:</b> General Chemistry I recitation & laboratory</p>
+    <span class="em" style="color: #a0a140">December 2016 - September 2018</span> &nbsp;&nbsp;&nbsp;&nbsp; Undergraduate Research, Temple University
+</h3>
+<hr style="height:2.5px">
+
+
+
+
+
+<!-- History/Experience -->
+<h5 style="align: left;font-size: 12pt;font-weight: bold;"> History/Experience </h5>
+
+<div class="timeline">
+  <ul>
+    <li>
+      <span>Jan. 2020 - Apr. 2020</span>
+      <div class="content">
+        <p>Teaching Assistant, Physical Chemistry of Biomolecules & Techniques of Chemical Measurement II
+        </p>
+      </div>
+    </li>
+    <li>
+      <span>21st Jun 2019</span>
+      <div class="content">
+        <!--<h3>What Is Lorem Ipsum?</h3>-->
+        <p>
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<hr style="height:2.5px">
+
+
+
+
+
+<!-- Awards -->
+<h5 style="align: left;font-size: 12pt;font-weight: bold;">Honors, Awards & Certificates</h5>
+
+<div class="row">
+  <div class="col-md-8">1$^{st}$ place poster presentation at ACS EUS YCC Research Symposium</div>
+  <div class="col-md-4" style="text-align:right;color: #a0a140">August 2021</div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-8">Guy Allen award for outstanding teaching</div>
+  <div class="col-md-4" style="text-align:right;color: #a0a140">December 2019</div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">Teaching in Higher Education Certification</div>
+  <div class="col-md-4" style="text-align:right;color: #a0a140">May 2019</div>
+</div>
+
+
+
+
 
 
 <hr style="height:2.5px">
@@ -13520,64 +13587,33 @@ Volunteer sessions: November 2018, March 2019
 
 <hr style="height:2.5px">
 
+<!-- Skills & Languages -->
+<h5 style="align: left;font-size: 12pt;font-weight: bold;">Skills & Programming Languages</h5>
+<p style="align: left;font-size: 10pt;"><b>Primary Programming Languages:</b> Python, C/C++, Bash, Visual Basic for Applications (Microsoft Excel macros)</p>
+<p style="align: left;font-size: 10pt;"><b>Markup Languages:</b> Markdown, HTML/CSS, LaTex</p>
+<p style="align: left;font-size: 10pt;"><b>High performance computing</b> (Owlsnest), <b>Distributed computing platform</b> (Folding@home) </h4>
+<p style="align: left;font-size: 10pt;"><b>Proficient with the following programs:</b> LabView & AutoCAD (engineering software), Gromacs & OpenMM(molecular dynamics simulations), Chimera & VMD-Visual Molecular Dynamics (interactive molecular visualization), mMASS (Mass spectrometry data acquisition and processing), TopSpin (NMR data acquisition and processing)</p>
+<hr style="height:2.5px">
 
-
-<!-- History/Experience -->
-<h5 style="align: left;font-size: 12pt;font-weight: bold;"> History/Experience </h5>
-
-<div class="timeline">
-  <ul>
-    <h4>2021</h4>
-    <li>
-      <span>Jan. — Dec.</span>
-      <div class="content">
-        <p>
-        Research Assistant<br>
-        <b>Award: (Aug.) 1<sup>st</sup> place poster presentation at ACS EUS YCC Research Symposium</b><br>
-        </p>
-      </div>
-    </li>
-    <h4>2020</h4>
-    <li>
-      <span>Jan. — Dec.</span>
-      <div class="content">
-        <p>
-        (May — Dec.) Research Assistant<br>
-        (Jan. — Apr.) Teaching Assistant, Physical Chemistry of Biomolecules & Techniques of Chemical Measurement II
-        </p>
-      </div>
-    </li>
-    <h4>2019</h4>
-    <li>
-      <span>Jan. — Dec.</span>
-      <div class="content">
-        <!--<h3>What Is Lorem Ipsum?</h3>-->
-        <p>
-        (Sept. — Dec.) Teaching Assistant,  Physical Chemistry of Biomolecules & General Chemistry I laboratory<br>
-        <b>Awards: The Guy Allen Award for outstanding teaching.</b><br>
-        (May. — Sept.) Graduate Research Assistant<br>
-        (June) Acedemic Intern for Computing & Statistics Summer Workshop, Temple University Physics department<br>
-        (Jan. — Apr.) Teaching Assistant, Chemistry for Engineers recitation & General Chemistry II laboratory<br>
-        <b>Certification: Teaching in Higher Education Certificate</b>
-        </p>
-      </div>
-    </li>
-    <h4>2018</h4>
-    <li>
-      <span>Sept. — Dec.</span>
-      <div class="content">
-        <p>
-        Teaching Assistant,  General Chemistry I recitation & laboratory
-        </p>
-      </div>
-    </li>
-  </ul>
-</div>
-
-
+<!-- Honors & Awards -->
 <!--
+<h3 style="align: left;font-size: 12pt;">Honors & Awards</h3>
+<a href="images/THE.jpg" target="_blank">Teaching in Higher Education Certification</a>;
 <hr style="height:2.5px">
 -->
+<!-- Other Experience -->
+<details class="details-example">
+  <summary style="font-size:100%">Other Experience:</summary>
+  <p style="font-size:70%;"> </p>
+  <h3 style="align: left;font-size: 10pt;">
+      <span class="em" style="color: #a0a140">December 2008 - September 2018</span> &nbsp;&nbsp;&nbsp;&nbsp; Janitor/Handyman, Lords & Ladies Salon and Medical Spa
+      <ul>
+          <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">Responsible for the cleanliness of the floors each week </li>
+          <li style="list-style-type: none;font-size: 10pt;font-weight: normal;">Performed repairs and standard maintenance of beauty salon and apartment complex</li>
+      </ul>
+      <span class="em" style="color: #a0a140">August 2011 - March 2014</span> &nbsp;&nbsp;&nbsp;&nbsp; Detailer/Lot Attendant/Shuttle Driver, Peruzzi Nissan Buick GMC
+  </h3>
+</details>
 
 
 
