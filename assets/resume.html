@@ -33,27 +33,27 @@ detailsElement.addEventListener('toggle', event => {
 <!-- Timeline -->
 <style type="text/css">
 .timeline{
-  width:100%;
+  width: 100%;
   /*background-color:#072736;*/
-  color:#fff;
-  padding:30px 70px;
+  color: #fff;
+  padding: 30px 70px;
   /*box-shadow:0px 0px 10px rgba(0,0,0,.5);*/
 }
 .timeline ul{
-  list-style-type:none;
-  border-left:3px solid #094a68;
-  padding:10px 5px;
+  /*list-style-type:none;*/
+  border-left: 3px solid #094a68;
+  border-left-color: black;
+  padding: 10px 5px;
+
 }
 .timeline ul li{
   padding:20px 0px 0px 5px;
   position:relative;
   /*cursor:pointer;*/
-  transition:.5s;
 }
+
 .timeline ul li span{
   display:inline-block;
-  /*background-color:#1685b8;
-  border-radius:25px;*/
   color: black;
   font-weight: bold;
   padding: 2px 5px;
@@ -65,7 +65,6 @@ detailsElement.addEventListener('toggle', event => {
   font-size: 12pt;
   padding-top: 5px;
 }
-
 .timeline ul h4{
   color: black;
   font-size: 13pt;
@@ -73,32 +72,34 @@ detailsElement.addEventListener('toggle', event => {
   margin-left: -90px;
   padding: -10px 0px;
 }
-
 .timeline ul li .content p{
   padding: 5px 0px 15px 0px;
   font-size: 11pt;
   color:black;
 }
-.timeline ul li:before{
+.timeline ul li:before {
+  display: block;
   position:absolute;
   content:'';
   width:15px;
   height:15px;
-  background-color:#000000;
+  background-color: black;
   border-radius:50%;
   left:-40px;
   top:28px;
-  transition:.5s;
+  z-index: 999 !important;
+  -webkit-print-color-adjust: exact !important;   /* Chrome, Safari, Edge */
+  color-adjust: exact !important;                 /*Firefox*/
 }
+
 .timeline ul li:hover{
   background-color: var(--header-color);
-
 }
 .timeline ul li:hover:before{
-  background-color:#0F0;
-  box-shadow:0px 0px 10px 2px #0F0;
+  background-color: var(--header-color);
+  /*box-shadow:0px 0px 10px 2px #0F0;*/
 }
-@media (max-width:300px){
+@media (max-width:600px){
   .timeline{
     width:100%;
     padding:30px 5px 30px 10px;
@@ -107,8 +108,8 @@ detailsElement.addEventListener('toggle', event => {
     color:#34ace0;
     font-size:15px;
   }
-
 }
+
 
 
 </style>
@@ -316,7 +317,7 @@ th {
   *,
   *:before,
   *:after {
-    background: transparent !important;
+    /*background: transparent !important;*/
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -13391,7 +13392,7 @@ summary:hover{
 
   </div>
 
-  <div class="col-md-3" style="horizontial-align:middle;font-size:58%;width:20%;padding-left: 0px;padding-right: 5px;float:right">
+  <div class="col-md-3" style="horizontial-align:middle;font-size:58%;width:22%;padding-left: 0px;padding-right: 5px;float:right">
     <!-- Short Address -->
     <div style="text-align: left;">
       <img src="https://e7.pngegg.com/pngimages/703/597/png-clipart-logo-house-home-house-angle-building-thumbnail.png" width="20px" align="left" style="vertical-align:middle">
