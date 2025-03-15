@@ -939,6 +939,7 @@ img {
     margin-top: 20px;
 }
 
+/* Standardized Image Size (Prevents Clipping) */
 /* Each Publication Entry */
 .publication {
     display: flex;
@@ -946,10 +947,11 @@ img {
     gap: 15px; /* Space between image and text */
 }
 
-/* Standardized Image Size (Prevents Clipping) */
+/* Standardized Image Size (20% of Scrollable Content) */
 .publication img {
-    width: 250px; /* Uniform width */
-    height: 250px; /* Uniform height */
+    width: 25% !important; /* Set width to 20% of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 25% !important; /* Prevents excessive scaling */
     object-fit: contain; /* Ensures the whole image fits inside without cropping */
     border-radius: 5px; /* Optional: rounded corners */
     background-color: white; /* Adds a subtle background if the image has transparency */
