@@ -1,9 +1,4 @@
-/*
-Template Name:Affiliates
-Copyright:WowThemes.net,https://www.wowthemes.net
-Version:1.0.2
-License: https://www.wowthemes.net/freebies-license/
-*/
+
 body {
     font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
     overflow-x: hidden;
@@ -13,10 +8,14 @@ body {
 }
 
 a {
-	color:#6FD350;
+/*	color:#6FD350;*/
+	color:rgba(0,0,0,.7);
+	/*color:#fff;*/
 }
-a,a:hover {
+a:hover {
 	transition:all 0.2s;
+	color:rgba(0,0,0,.7);
+
 }
 pre {
     -moz-box-sizing: border-box;
@@ -42,8 +41,10 @@ pre {
 .nav-up {box-shadow:none;}
 
 .site-content {
-    padding-top: 3.5rem;
-    margin-top: 57px;
+    /*padding-top: 3.5rem;*/
+    padding-top: 0rem;
+    /*margin-top: 57px;*/
+    margin-top: 0px;
     transition: all 0.4s;
 }
 section {
@@ -324,95 +325,92 @@ span.post-name a,span.post-read-more a:hover {
 	font-weight:700;
 	margin-bottom:1rem;
 }
+
+
+
+
 .intro {
-    background-image:url(../images/background_image);
-    background-size:cover;
-    padding: 9rem 0;
-    margin-top:-87px;
-    margin-bottom:3.5rem;
+    background-color: #ffffff; /* Dark background similar to footer */
+    padding: 6rem 0;
+    margin-top: -87px;
+    /*margin-bottom: 3.5rem;*/
+    margin-bottom: 0.25rem;
     z-index: 1;
     position: relative;
+    color:  #171e27; /* White text for contrast */
+    text-align: center;
 }
+
 .intro .btn {
-    background: #fff100;
+    background: #ffffff;
     border: 0;
-    color: #333;
+    color: #171e27;
     border-radius: 3px;
     font-weight: 500;
     padding: 15px 40px;
-    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
+
+.intro .btn:hover {
+    background: #f0f0f0;
+    color: #171e27;
+}
+
 .intro h1 {
-    font-weight:700;
+    font-weight: 700;
+    font-size: 3rem;
 }
+
 .intro h2 {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    color: #888;
+    color: #cccccc;
     line-height: 1.6;
 }
-.wrapintro {
-    background: #fff;
-    width: 700px;
-    padding: 3rem;
-    max-width: 90%;
-    margin: 0px auto;
-    text-align: center;
-}
-.wrapintro1 {
-    background: #fff;
-    width: 800px auto;
-    padding: 1rem;
-    max-width: 90%;
-    margin: 0px auto;
+
+.wrapintro, .wrapintro1, .subintro {
+    background-color: #ffffff;
+    padding: 5rem;
+    color: #1c2331;
+/*    font-size: 1.15rem;*/
     text-align: left;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    position: relative;
-}
-.subintro {
-    background: #ffffff;
-    width: 800px auto;
-    padding: 1rem;
-    max-width: 90%;
     margin: 0px auto;
-    text-align: left;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    border-radius: 5px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
+
+.wrapintro h1, .wrapintro h2, .wrapintro1 h1, .wrapintro1 h2, .subintro h1, .subintro h2 {
+    color: #ffffff;
+}
+
 .footer {
-	border-top:1px solid rgba(0,0,0,.05)!important;
-	color:#999;
-	margin-top:50px;
-    margin-bottom:0px;
-    background-color: #171e27;
-    padding: 30px 0px 30px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1)!important;
+    color: #1c2331;
+    background-color: #ffffff;
+    padding: 30px 0px;
 }
+
 .footersocial i {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    display: inline-block;
     background: #ffffff;
     border-radius: 3px;
-    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     font-size: 18px;
     margin-left: 5px;
-    color: #3c3838;
+    color: #171e27;
     margin-top: 10px;
 }
 .beforefooter {
-    background: #fff100;
-    color: #111;
-    padding: 40px 0;
-    max-width: 100%;
-    margin: 0px auto;
-    margin-bottom: -50px; margin-top:50px;
+    display: none; /* Completely hides the section */
 }
+
+
+
+
+
 .footer a {color:inherit;}
 .footer a:hover {color:#fff; text-decoration:none;}
 .footer-widget {margin-bottom: 3rem;    margin-top: 3rem;font-size:15px;}
@@ -486,6 +484,11 @@ blockquote {
     margin-left: -50vw;
     margin-right: -50vw;
 }
+
+
+
+
+
 @media (max-width:999px) {
 	.listfeaturedtag .wrapthumbnail, .listfeaturedtag .col-md-7 {
 		width:100%;
@@ -889,3 +892,86 @@ iframe {
     .form-group .col-md-6:first-child {   margin-bottom: 1rem;}
 
 }
+
+
+/* General image styling */
+.responsive-image {
+    float: right;
+    margin-left: 20px; /* Adjusts space between text and image */
+    width: 20%; /* Default size for larger screens */
+    height: auto; /* Maintains aspect ratio */
+}
+
+/* Responsive adjustments based on screen width */
+@media (max-width: 768px) {
+    .responsive-image {
+        width: 40%; /* Increase size on smaller screens */
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-image {
+        width: 60%; /* Further increase size on very small screens */
+        margin-left: 10px;
+    }
+}
+
+/* Ensures image doesn’t overflow its container */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adjusting padding and layout for smaller screens */
+@media (max-width: 991px) {
+    .wrapintro {
+        padding: 2rem 1rem; /* Reduces padding for better fit */
+    }
+}
+
+
+/* Publication List Styling */
+.publication-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between items */
+    margin-top: 20px;
+}
+
+/* Each Publication Entry */
+.publication {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between image and text */
+}
+
+/* Standardized Image Size (Prevents Clipping) */
+.publication img {
+    width: 250px; /* Uniform width */
+    height: 250px; /* Uniform height */
+    object-fit: contain; /* Ensures the whole image fits inside without cropping */
+    border-radius: 5px; /* Optional: rounded corners */
+    background-color: white; /* Adds a subtle background if the image has transparency */
+    padding: 5px; /* Prevents the image from looking cramped */
+    border: 1px solid #ddd; /* Optional: Light border for aesthetics */
+}
+
+/* Text Area Styling */
+.publication-info {
+    flex-grow: 1;
+    text-align: justify;
+}
+
+/* Link Styling */
+.publication-info a {
+    color: #0056b3; /* Dark blue for visibility */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.publication-info a:hover {
+    text-decoration: underline;
+}
+
+
