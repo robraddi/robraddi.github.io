@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<html>
+
+<!-- HEAD:{{{-->
+ <!-- Source: https://github.com/lob/examples/blob/master/letters/8.5x11-letter.html-->
+<head>
+<meta charset="UTF-8">
+
+<!-- General and theme style sheets -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+
+<title>CV</title>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+}
+
+</script>
+
+
+<!-- MathJax configuration -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+        extensions: ["AMSmath.js", "color.js"],
+        equationNumbers: { autoNumber: "AMS" },
+        Macros: {
+            sigmaSEM: "\\sigma^{\\tiny\\text{SEM}}",
+            sigmaB: "\\sigma^{\\tiny\\text{B}}",
+            sigmaEff: "\\sigma_{\\tiny\\text{0}}",
+            Znot: "Z_{\\tiny\\text{0}}",
+        }
+    },
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true,
+    },
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {
+        '.MathJax_Display': {
+            "margin": 0,
+            "font-size": "100%" // Change this value to adjust the font size.
+            }
+        },
+        linebreaks: { automatic: true },
+    },
+});
+
+MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
+    var TEX = MathJax.InputJax.TeX;
+    var PREFILTER = TEX.prefilterMath;
+    TEX.Augment({
+        prefilterMath: function (math, displaymode, script) {
+            // Adjust main equation size here if required
+            math = "\\scriptsize{" + math + "}";
+            return PREFILTER.call(TEX, math, displaymode, script);
+        }
+    });
+});
+</script>
+
+<!-- End of mathjax configuration -->
+
+
+<style>
+  *, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 8.5in;
+    height: 11in;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page {
+    page-break-after: always;
+    position: relative;
+    width: 8.5in;
+    height: 11in;
+  }
+
+  .page-content {
+    position: absolute;
+    /*width: 8.125in;*/
+    width: 8.125in;
+    height: 10.625in;
+    left: 0.1875in;
+    top: 0.1875in;
+    /*background-color: rgba(0,0,0,0.2);
+    border: 5px solid #730225;
+    border-bottom: 5px solid #730225;
+    */
+
+  }
+
+  .text {
+    position: relative;
+    left: 20px;
+    top: 20px;
+    width: 8.5in;
+    font-family: 'Open Sans';
+  }
+
+  #return-address-window {
+    position: absolute;
+    left: .625in;
+    top: .5in;
+    width: 3.25in;
+    height: .875in;
+    background-color: rgba(255,0,0,0.5);
+  }
+
+  #return-address-text {
+    position: absolute;
+    left: .07in;
+    top: .34in;
+    width: 2.05in;
+    height: .44in;
+    font-size: .11in;
+  }
+
+  #return-logo {
+    position: absolute;
+    left: .07in;
+    top: .02in;
+    width: 2.05in;
+    height: .3in;
+  }
+
+  #recipient-address-window {
+    position: absolute;
+    left: .625in;
+    top: 1.7in;
+    width: 4in;
+    height: 1in;
+    background-color: rgba(255,0,0,0.5);
+  }
+
+  #recipient-address-text {
+    position: absolute;
+    left: .07in;
+    top: .05in;
+    width: 2.92in;
+    height: .9in;
+  }
+
+  #white-box {
+    background-color: white;
+    width: 3.15in;
+    height: 2in;
+    position: absolute;
+    left: .6in;
+    top: .84in;
+  }
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+a {
+    text-decoration: none;
+}
+hr {
+    border: 0;               /* Removes the default styling */
+    border-top: 2px solid #333; /* Changes thickness and color */
+    margin: 20px 0;          /* Adds some vertical spacing */
+}
+ul li {
+    text-align: justify;
+}
+ol li {
+    text-align: justify;
+    margin-bottom: 5px;
+}
+.new-page { page-break-before: always; }
+
+</style>
+</head>
+<!--}}}-->
+
+<!-- NOTE: Use this command in terminal to get high-quality pdf
+wkhtmltopdf --javascript-delay 10000 --outline --footer-center "[page]" --footer-font-size 11 --footer-spacing 10 --margin-bottom 20 CurriculumVitae.html CV_RR.pdf
+-->
+
+<!-- BODY:{{{-->
+<body>
+  <div class="page">
+    <div class="page-content">
+      <div class="text" style="top: 0.0in;bottom: 0.0in;font-family: Times New Roman; font-size:14pt">
+
+<!-- Heading -->
+<a href="https://robraddi.github.io" style="text-decoration: none"><h1 style="margin-bottom:0px;margin-top:0px;text-align: center;font-family: work-sans; font-size: 22pt;color: black"> Robert M. Raddi</h1></a>
+
+
+<h5 style="margin-bottom:0px;align: left;font-size: 18pt;font-weight: bold;font-style:normal">Personal Statement</h5>
+<hr style="height:1px;margin-top: 0px; margin-bottom:0px;">
+<div class="row" >
+  <!-- Name and Job title -->
+  <!-- 78 - 22 -->
+
+  <div class="col-md-3" style="width:27%;border-left: 2px solid black; horizontial-align:middle;padding-left: 5px;padding-right: 0px;float:right; text-align:left">
+
+    <!-- Short Address -->
+    <div style="padding:1px;">
+      <img src="https://e7.pngegg.com/pngimages/703/597/png-clipart-logo-house-home-house-angle-building-thumbnail.png" width="25px" style="vertical-align:middle">
+      <span style="margin-left:5px">Philadelphia, PA</span>
+    </div>
+    <!-- phone -->
+    <div style="padding:1px;">
+      <img src="https://icon2.cleanpng.com/20180422/kee/kisspng-telephone-number-computer-icons-telephone-symbol-5adc94abe20134.1155473815244054199257.jpg" width="25px" style="vertical-align:middle">
+      <span style="margin-left:5px">(267) 312-0604</span>
+    </div>
+    <!-- email -->
+    <div style="padding:1px;">
+      <a href="mailto:rraddi@temple.edu">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZIInA5Aem0L0Vgckl0tKdJunbARBvfjxgQ&usqp=CAU" width="25px" style="vertical-align:middle">
+        <span style="margin-left:5px">rraddi@temple.edu</span>
+      </a>
+    </div>
+    <!-- website -->
+    <div style="padding:1px;">
+      <a href="https://robraddi.github.io">
+        <img src="https://w7.pngwing.com/pngs/929/206/png-transparent-computer-icons-hyperlink-symbol-link-miscellaneous-text-logo.png" width="25px" style="vertical-align:middle">
+        <span style="margin-left:5px">robraddi.github.io</span>
+      </a>
+    </div>
+    <!-- GitHub -->
+    <div style="padding:1px;">
+      <a href="https://github.com/robraddi">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="25px" style="vertical-align:middle">
+        <span style="margin-left:5px">github.com/robraddi</span>
+      </a>
+    </div>
+    <!-- LinkedIn -->
+    <div style="padding:1px;">
+      <a href="https://www.linkedin.com/in/rraddi">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png" width="25px" style="vertical-align:middle">
+        <span style="margin-left:5px">linkedin.com/in/rraddi</span>
+      </a>
+    </div>
+    <!-- Researchgate -->
+    <div style="padding:1px;">
+      <a href="https://www.researchgate.net/profile/Robert-Raddi">
+        <img src="https://img.icons8.com/?size=80&id=EaenHqZcKBuh&format=png" width="25px" style="vertical-align:middle">
+        <span style="margin-left:5px">Robert M. Raddi</span>
+      </a>
+    </div>
+    <!-- Google Scholar -->
+    <div style="padding:1px;">
+      <a href="https://scholar.google.com/citations?user=P2BSqgYAAAAJ&hl=en">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/2048px-Google_Scholar_logo.svg.png" width="25px" style="vertical-align:middle">
+        <span style="margin-left:5px">Robert M. Raddi</span>
+      </a>
+    </div>
+    <br>
+  </div>
+  <div class="col-md-6" style="width:73%;padding-right: 10px;margin-left:0px;">
+    <p style="text-align: justify;">
+    A passionate researcher, skilled in developing and applying machine/deep learning, Bayesian inference, and maximum entropy methods to a wide array of scientific problems. My current research effectively combines theory with experiment, enabling us to enhance the accuracy our molecular models. This interdisciplinary research has been recognized with numerous academic accolades and has fueled advancements in biophysics, structural biology, and drug discovery. With a strong commitment to scientific exploration and collaboration, I am eager to learn new methods, grow as a scientist, continue cutting-edge research, and hopefully influence other scientists along the way. <!--<u>My goal is to become a competitive candidate for an independent research faculty position in academia.</u>-->
+    </p>
+  </div>
+
+
+    <!-- Education -->
+    <h5 style="margin-bottom:0px;align: left;font-size: 18pt;font-weight: bold;font-style:normal">Education</h5>
+    <hr style="height:1px;margin-top: 0px; margin-bottom:0px;">
+
+    <p style="text-align: justify;">
+     <div class="row" style="width:100%">
+         <div class="col-md-6" style="width:12%;padding-right: 0px;margin-left:0px;margin-right:0px;text-align:right;float:right;">
+         2018 - 2024
+         </div>
+         <div class="col-md-6" style="width:88%;padding-right: 10px;margin-left:0px;">
+           <b>Ph.D. in Theoretical Chemistry, Temple University, Philadelphia, Pennsylvania, USA</b><br>
+           <p style="text-align:center !important; padding:0px;margin:0px;">
+           <a href="http://dx.doi.org/10.34944/dspace/10681" target="_blank">
+               "A Bayesian Inference/Maximum Entropy Approach for Optimization and Validation of <br>Empirical Molecular Models"
+           </a></p>
+           <br>
+           Advisor: Dr. Vincent Voelz
+         </div>
+     </div>
+     <br>
+     <div class="row" >
+         <div class="col-md-6" style="width:12%;padding-right: 0px;margin-left:0px;text-align:right;float:right;">
+         2013 - 2017
+         </div>
+
+         <div class="col-md-6" style="width:88%;padding-right: 10px;margin-left:0px;">
+           <b>B.S in Chemistry, Temple University, Philadelphia, Pennsylvania, USA</b><br>
+           <b>Minor in Mathematics</b>
+         </div>
+     </div>
+    </p>
+
+    <!-- History/Experience -->
+    <h5 style="margin-bottom:0px;align: left;font-size: 18pt;font-weight: bold;font-style:normal">Experience</h5>
+    <hr style="height:1px;margin-top: 0px; margin-bottom:0px;">
+
+
+    <p style="text-align: justify;">
+     <div class="row" style="width:100%">
+         <div class="col-md-6" style="width:14%;padding-right: 0px;margin-left:0px;margin-right:0px;text-align:right;float:right;">
+           2024-Present
+         </div>
+         <div class="col-md-6" style="width:86%;padding-right: 10px;margin-left:0px;">
+           <span style="margin-bottom:0px;align: left;font-weight: bold;font-style:normal">Adjunct Research Assistant Professor</span><br>
+           Temple University, Philadelphia, PA
+           <ul>
+             <li>Submit co-first-author article to JCTC demonstrating high-resolution tuning of non-natural and cyclic peptide folding landscapes against NMR measurements.</li>
+             <li>Conducting experiments and obtaining promising preliminary results for a research proposal, which focuses on <u>deep learning and generative modeling</u>.</li>
+             <li>Addressing peer-reviewer comments for the publication of my preprints.</li>
+             <li>Writing and conducting experiments for a collaborative project: an optimization tool for free energy calculations.</li>
+
+             <!--
+             <li>training deep neural network kinetic models to learn the transition states for accurate kinetics while simultaneously capturing the correct relative populations of conformational states
+               doing so by applying experimental restraints to accurately reweight the relative populations of these conformational states.</li>
+
+             <li>train neural network molecular potentials while accounting for the model complexity due to the network architecture. I have also taken it upon myself to integrate important data restraints like residual dipolar coupling, small/wide angle X-ray scattering, and paramagnetic relaxation enhancement observables into BICePs.</li>
+
+             <li>This will not only broaden the algorithm’s applicability, but it will significantly enhance its precision in modeling larger/more complex molecular systems in collaboration with NMR spectroscopist Beat Vögeli at the University of Colorado.</li>
+             -->
+
+                 <!--These ongoing projects not only underscore my commitment to advancing computational methodologies in the realm of structural biology and biophysics, but also highlights my capability to innovate and adapt to emerging challenges and opportunities in the field.-->
+           </ul>
+         </div>
+     </div>
+     <br>
+     <div class="row" style="width:100%">
+         <div class="col-md-6" style="width:14%;padding-right: 0px;margin-left:0px;margin-right:0px;text-align:right;float:right;">
+           2018-2024
+         </div>
+         <div class="col-md-6" style="width:86%;padding-right: 10px;margin-left:0px;">
+           <span style="margin-bottom:0px;align: left;font-weight: bold;font-style:normal">Graduate Researcher/Fellow</span><br>
+           Temple University, Philadelphia, PA
+           <ul>
+             <li>Awards granted by both the university and department for outstanding research contributions.</li>
+             <li>Conceptualized and designed numerous research projects, developed novel methodologies as needed, and established successful collaborations.</li>
+             <li>Published 11 high-quality papers in 6 years, advancing the fields of computational biophysics and computational structural biology.</li>
+             <li>Focused on Bayesian Inference and Maximum Entropy methods to enhance empirical models through ensemble refinement, force field optimization, and forward model improvement; specialized in Bayesian model selection and algorithms for machine-learned potentials and forward model predictors.</li>
+             <li>Conducted research on protein-peptide binding simulations and contributed predictions of logP, pKa, and absolute binding free energies to community-wide blind <a href="https://samplchallenges.org">SAMPL challenges</a>.</li>
+             <li>My published pKa prediction data and software are currently incorporated into the curriculum for <a href="https://sites.temple.edu/data/" target="_blank">Elements of Data Science</a>, an undergraduate course at Temple University.</li>
+           </ul>
+         </div>
+     </div>
+     <br>
+     <div class="row" style="width:100%">
+         <div class="col-md-6" style="width:14%;padding-right: 0px;margin-left:0px;margin-right:0px;text-align:right;float:right;">
+           2018-2023
+         </div>
+         <div class="col-md-6" style="width:86%;padding-right: 10px;margin-left:0px;">
+           <span style="margin-bottom:0px;align: left;font-weight: bold;font-style:normal">Teaching Assistant</span><br>
+           Temple University, Philadelphia, PA
+           <ul>
+             <li>Received awards from both the university and department for exceptional teaching.</li>
+             <li>Instructed lectures & labs for Quantum Mechanics, Thermodynamics, Physical Chemistry of Biomolecules, Analytical Chemistry, and General Chemistry across various levels.</li>
+             <br>
+           <div class="certification"><b>Certification:</b> 2019 Teaching in Higher Education Certificate</div>
+           <div class="outreach"><b>Outreach:</b> 2018 Student Mentor for New Foundations Charter School</div>
+           </ul>
+         </div>
+     </div>
+     <br>
+     <div class="row" style="width:100%">
+         <div class="col-md-6" style="width:14%;padding-right: 0px;margin-left:0px;margin-right:0px;text-align:right;float:right;">
+           2019
+         </div>
+         <div class="col-md-6" style="width:86%;padding-right: 10px;margin-left:0px;">
+           <span style="margin-bottom:0px;align: left;font-weight: bold;font-style:normal">Academic Intern</span><br>
+           Temple University, Philadelphia, PA
+           <ul>
+             <li>Served as an Academic Intern for the <a href="https://sites.temple.edu/compstat/">Computing & Statistics Summer Workshop</a>, facilitating a 2-week program that helped ~30 graduate students pursuing physical and social sciences.</li>
+             <li>Assisted with technical setups including package manager installations and provided support with Python, Bash, Jupyter Notebooks, and GitHub. Contributed to lecture materials and engaged actively in student learning.</li>
+           </ul>
+         </div>
+     </div>
+    </p>
+
+
+    <!-- Publications -->
+    <h5 style="margin-bottom:0px;align: left;font-size: 18pt;font-weight: bold;font-style:normal"> Publications (<span style="align: left;font-size: 16pt;margin-left:5px;">$^{\large\boldsymbol{\dagger}}$</span><span style="align: left;font-size: 12pt;margin-left:5px;">these authors contributed equally</span>)</h5>
+
+
+    <hr style="height:1px;margin-top: 0px; margin-bottom:0px;">
+    <ol style="">
+
+      <li style="margin-left:0px; align: left;"><u><b>Robert M. Raddi</b></u>, Tim Marshall and Vincent A. Voelz. "Automatic Forward Model Parameterization with Bayesian Inference of Conformational Populations." <a href="https://arxiv.org/abs/2405.18532" target="_blank">arxiv.org/abs/2405.18532</a></li>
+
+      <li style="margin-left:0px; align: left;"><u><b>Robert M. Raddi</b></u> and Vincent A. Voelz. "Automated optimization of force field parameters against ensemble-averaged measurements with Bayesian Inference of Conformational Populations." <a href="https://arxiv.org/abs/2402.11169" target="_blank">arxiv.org/abs/2402.11169</a></li>
+
+      <li style="margin-left:0px; align: left;">Dylan Novack, <u><b>Robert M. Raddi</b></u>, Si Zhang, Matthew F.D. Hurley and Vincent A. Voelz. "A simple method to optimize the spacing and number of alchemical intermediates in expanded ensemble free energy calculations."<a href="https://doi.org/10.26434/chemrxiv-2025-7fdpf" target="_blank">10.26434/chemrxiv-2025-7fdpf</a></li>
+
+      <li style="margin-left:0px; align: left;"><u><b>Robert M. Raddi</b></u>, Tim Marshall, Yunhui Ge, and Vincent A. Voelz. "Model Selection using Bayesian Inference of Conformational Populations with Replica-Averaging." <a href="https://doi.org/10.26434/chemrxiv-2023-396mm" target="_blank">10.26434/chemrxiv-2023-396mm</a>;</li>
+
+
+      <li style="margin-left:0px; align: left;">Thi Dung Nguyen$^{\large\boldsymbol{\dagger}}$, <u><b>Robert M. Raddi</b></u>$^{\large\boldsymbol{\dagger}}$, and Vincent A. Voelz. "High-resolution tuning of non-natural and cyclic peptide folding landscapes against NMR measurements using Markov models and Bayesian Inference of Conformational Populations." <a href="https://doi.org/10.26434/chemrxiv-2024-sz1xx" target="_blank">10.26434/chemrxiv-2024-sz1xx</a>; </li>
+
+      <li style="margin-left:0px; align: left;">Matthew F.D. Hurley$^{\large\boldsymbol{\dagger}}$, <u><b>Robert M. Raddi</b></u>$^{\large\boldsymbol{\dagger}}$, Jason Pattis and Vincent A. Voelz. "Expanded Ensemble Predictions of Absolute Binding Free Energies in the SAMPL9 Host-Guest Challenge." Phys. Chem. Chem. Phys., 2023,25, 32393-32406. <a href="https://chemrxiv.org/engage/chemrxiv/article-details/648a6129be16ad5c57f0cee0" target="_blank">preprint</a>; <a href="https://doi.org/10.1039/D3CP02197A" target="_blank">article</a></li>
+
+      <li style="margin-left:0px; align: left;margin-bottom:0px;"><u><b>Robert M. Raddi</b></u>, and Vincent A. Voelz. "Stacking Gaussian Processes to Improve pKa Predictions in the SAMPL7 Challenge." Journal of Computer-Aided Molecular Design 35 (2021): 953-961. <a href="https://doi.org/10.26434/chemrxiv.14650302.v1" target="_blank">preprint</a>; <a href="https://link.springer.com/article/10.1007/s10822-021-00411-8" target="_blank">article</a></li>
+
+      <li style="margin-left:0px; align: left;"><u><b>Robert M. Raddi</b></u>, Yunhui Ge, and Vincent A. Voelz. "BICePs v2.0: Software for Ensemble Reweighting using Bayesian Inference of Conformational Populations." J. Chem. Inf. Model. 2023, 63, 8, 2370–2381. <a href="https://doi.org/10.26434/chemrxiv-2022-1b24c" target="_blank">preprint</a>; <a href="https://doi.org/10.1021/acs.jcim.2c01296" target="_blank">article</a></li>
+
+      <li style="margin-left:0px; align: left;"><u><b>Robert M. Raddi</b></u> and Vincent A. Voelz. "A Markov State Model of Solvent Features Reveals Water Dynamics in Protein-Peptide Binding." J. Phys. Chem. B 2023, 127, 50, 10682–10690. <a href="https://doi.org/10.26434/chemrxiv-2023-r6njk" target="_blank">preprint</a>; <a href="https://doi.org/10.1021/acs.jpcb.3c04775" target="_blank">article</a> </li>
+
+
+      <li style="margin-left:0px; align: left;">Tim Marshall, <u><b>Robert M. Raddi</b></u> and Vincent A. Voelz. "An Evaluation of Force Field Accuracy for the Mini-Protein Chignolin using Markov State Models."  <a href="https://doi.org/10.26434/chemrxiv-2024-xmztm" target="_blank">preprint</a>;
+
+      <li style="margin-left:0px; align: left;">Vincent A. Voelz, Yunhui Ge, and <u><b>Robert M. Raddi</b></u>. "Reconciling simulations and experiments with BICePs: a review." Frontiers in Molecular Biosciences 8 (2021): 325. <a href="https://doi.org/10.3389/fmolb.2021.661520" target="_blank">article</a></li>
+
+<!--      <br>
+<br>-->
+
+
+      <li style="margin-left:0px; align: left;">Steven Goold, <u><b>Robert M. Raddi</b></u> and Vincent A. Voelz. "Expanded Ensemble Predictions of Toluene‑Water Partition Coefficients in the SAMPL9 log$P$ Challenge."<b></b><a href="https://chemrxiv.org/engage/chemrxiv/article-details/67918563fa469535b95a9518" target="_blank">preprint</a>; <a href="https://pubs.rsc.org/en/Content/ArticleLanding/2024/CP/D4CP03621B" target="_blank">article</a></li></li>
+
+
+
+
+    </ol>
+    <footer style="align: left;font-size: 12pt;margin-left:5px;"><span style="font-size:16pt;">$^{\large\boldsymbol{\dagger}}$</span> these authors contributed equally</footer>
+
+
+
+    <!-- Awards -->
+    <h5 style="margin-bottom:0px;align: left;font-size: 18pt;font-weight: bold;font-style:normal">Fellowships and Awards</h5>
+    <hr style="height:1px;margin-top: 0px; margin-bottom:0px;">
+    <p></p>
+    <div class="awards"><u>Fellowships:</u></div>
+    <ul style="margin-left:-10px;margin-top:0px">
+      <li style="align: left;">2024 Temple University College of Science and Technology Dissertation Grant </li>
+    </ul>
+
+    <div class="awards"><u>Research Awards:</u></div>
+    <ul style="margin-left:-10px;margin-top:0px">
+      <li style="align: left;">2023 Temple University College of Science and Technology Outstanding Research Award (one winner per dept.)</li>
+      <li style="align: left;">2023 Francis H. Case Research Award (one winner)                </li>
+      <li style="align: left;">2022 Daniel Swern Research Award (two winners)                  </li>
+      <li style="align: left;">2021 1<sup>st</sup> Place Poster Presentation at ACS EUS YCC Research Symposium</li> </li>
+    </ul>
+    <div class="awards"><u>Teaching Awards:</u></div>
+    <ul style="margin-left:-10px;margin-top:0px">
+      <li style="align: left;">2022 Temple University College of Science and Technology Outstanding Teaching Assistant Award (one winner per dept.)</li>
+      <li style="align: left;">2019 The Guy Allen Award for Outstanding Teaching (one winner)</li>
+    </ul>
+
+    <!-- Presentations -->
+    <h5 style="margin-bottom:0px;align: left;font-size: 18pt;font-weight: bold;font-style:normal">Presentations</h5>
+    <hr style="height:1px;margin-top: 0px; margin-bottom:0px;">
+    <p></p>
+
+    <ul style="margin-left:-10px;margin-top:0px">
+      <li style="align: left;">2024 Biophysical Society 66th Annual Meeting in Philadelphia, PA               </li>
+      <li style="align: left;">2023 Temple University CAD talk (talk - 50 min)                               </li>
+      <li style="align: left;">2023 Biophysical Society 64th Annual Meeting in San Diego, CA (poster)        </li>
+      <li style="align: left;">2021 Roivant (talk - 30 min)                                                  </li>
+      <li style="align: left;">2021 ACS YCC in Philadelphia, PA (poster)                                     </li>
+      <li style="align: left;">2021 Folding@Home science talk (talk - 30 min)                                </li>
+      <li style="align: left;">2021 Protein Folding Consortium (poster)                                      </li>
+      <li style="align: left;">2020 Biophysical Society 64th Annual Meeting in San Diego, CA (poster)        </li>
+      <li style="align: left;">2020 ACS YCC in Philadelphia, PA (poster)                                     </li>
+      <li style="align: left;">2018 Biophysical Society 62nd Annual Meeting in San Francisco, CA (poster)    </li>
+      <li style="align: left;">2018 ACS YCC in Philadelphia, PA (poster)                                     </li>
+      <li style="align: left;">2017 ACS YCC in Philadelphia, PA (poster)                                     </li>
+    </ul>
+
+
+    <!-- Peer Reviewer -->
+    <h5 style="margin-bottom:0px;align: left;font-size: 18pt;font-weight: bold;font-style:normal">Peer Reviewer</h5>
+    <hr style="height:1px;margin-top: 0px; margin-bottom:0px;">
+    <ul style="margin-left:-10px;">
+      <li style="margin-left:0px; align: left;">The Royal Society of Chemistry</li>
+    </ul>
+
+
+
+    <!-- Skills -->
+    <h5 style="margin-bottom:0px;align: left;font-size: 18pt;font-weight: bold;font-style:normal">Skills</h5>
+    <hr style="height:1px;margin-top: 0px; margin-bottom:0px;">
+
+    <ul style="margin-left:-10px;">
+      <!--<li style="align: left;"><b>Programming:</b> Python, C/C++, Cython, Bash (~10 yrs of experience i.e., <u>proficiency prior to ChatGPT</u>)</li>-->
+      <li style="align: left;"><b>Programming:</b> Python, C/C++, Cython, Bash (~10 yrs of experience for each)</li>
+      <li style="align: left;"><b>Machine Learning:</b> PyTorch, scikit-learn</li>
+      <li style="align: left;"><b>Bayesian Inference & Statistical Inference:</b> Expertise in developing algorithms for data-driven and knowledge-driven predictive modeling.</li>
+      <li style="align: left;"><b>Deep Learning:</b> Experience in applying/developing deep learning techniques for pKa and logP prediction</li>
+      <li style="align: left;"><b>Cheminformatics:</b> QSAR calculations, RDKit, OpenEye scientific software, etc.</li>
+      <li style="align: left;"><b>Computational Chemistry:</b> Advanced molecular modeling, MD/MCMC, force field optimization, forward model optimization, kinetic network models, and much more.</li>
+    </ul>
+
+
+    <!-- Mentoring -->
+    <h5 style="margin-bottom:0px;align: left;font-size: 18pt;font-weight: bold;font-style:normal">Mentoring</h5>
+    <hr style="height:1px;margin-top: 0px; margin-bottom:0px;">
+    <p style="text-align:justify">I am dedicated to mentoring the next generation of scientists, with a particular focus on supporting younger researchers in their development. Over the course of my career, I have guided five graduate students and eight undergraduate students in the Voelz lab, helping them develop their skills and navigate their research. In addition, I extended my mentoring to high school students, participating in an outreach program in 2018 through New Foundations Charter School, a Philadelphia lottery-based high school. For their annual Career Shadow Day, I hosted three students at Temple University, where we explored classic demonstrations with liquid nitrogen and dry ice. When they expressed interest in computer science, I shared movies of molecular dynamics simulations from my own research. The students seemed to thoroughly enjoy the experience, and I hope to have inspired them to pursue their interests further.</p>
+
+
+
+    <!-- References -->
+    <h5 style="margin-top:15px;margin-bottom:0px;align: left;font-size: 18pt;font-weight: bold;font-style:normal">References</h5>
+    <hr style="height:1px;margin-top: 0px; margin-bottom:0px;">
+
+    <p style="text-align: justify;">
+     <div class="row" style="width:100%">
+         <div class="col-md-6" style="width:30%;padding-right: 0px;margin-left:0px;text-align:right;float:right;">
+           [voelz@temple.edu]<br> (215) 204-1973
+         </div>
+         <div class="col-md-6" style="width:70%;padding-right: 10px;margin-left:10px;">
+           1. Vincent A. Voelz<br>Professor / Associate Department Chair of Chemistry, Temple University
+         </div>
+     </div><br>
+     <div class="row" style="width:100%">
+         <div class="col-md-6" style="width:30%;padding-right: 0px;margin-left:0px;margin-right:0px;text-align:right;float:right;">
+           [ronlevy@temple.edu]<br> (215) 204-0607
+         </div>
+         <div class="col-md-6" style="width:70%;padding-right: 10px;margin-left:10px;">
+           2. Ronald M. Levy<br> Laura H. Carnell Professor of Biophysics and Computational Biology, Temple University
+         </div>
+     </div><br>
+     <div class="row" style="width:100%">
+         <div class="col-md-6" style="width:30%;padding-right: 0px;margin-left:0px;margin-right:0px;text-align:right;float:right;">
+           [vincenzo.carnevale@temple.edu]<br> (215) 204-4214
+         </div>
+         <div class="col-md-6" style="width:70%;padding-right: 10px;margin-left:10px;">
+           3. Vincenzo Carnevale<br> Associate Professor of Biology, Temple University
+         </div>
+     </div><br>
+     <div class="row" style="width:100%">
+         <div class="col-md-6" style="width:30%;padding-right: 0px;margin-left:0px;margin-right:0px;text-align:right;float:right;">
+           [sharpk@mail.med.upenn.edu]<br> (215) 573-3506
+         </div>
+         <div class="col-md-6" style="width:70%;padding-right: 10px;margin-left:10px;">
+           4. Kim A. Sharp<br> Associate Professor of Biochemistry and Biophysics, University of Pennsylvania
+         </div>
+     </div>
+    </p>
+
+
+
+<!--
+Mentor
+Company NameNew Foundations Charter School
+Dates volunteeredNov 2018 – Mar 2019  Volunteer duration5 mos
+Cause Education
+NFCS students visit Temple University Chemistry Department and complete a project which I have designed for their academic interests.
+Volunteer sessions: November 2018, March 2019
+-->
+
+
+  </div>
+</div>
+
+
+
+    </div>
+  </div>
+  </div>
+</body>
+<!--}}}-->
+
+
+
+
+</html>
+
+
+
+

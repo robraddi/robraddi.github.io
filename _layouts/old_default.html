@@ -55,24 +55,48 @@
 
             <!-- Begin Menu -->
             <ul class="navbar-nav ml-auto">
+                <!--
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ site.baseurl }}/research.html">Research</a>
+                    <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
+                </li>
+                -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="nav-link" href="{{ site.baseurl }}/">Projects</a>
+                    <a class="nav-link" href="{{ site.baseurl }}/">Publications</a>
+                    </div>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ site.baseurl }}/posts_and_slides.html">Blog</a>
+                    <a class="nav-link" href="{{ site.baseurl }}/teaching.html">Teaching</a>
                 </li>
 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Software</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="nav-link" href="https://biceps.readthedocs.io/en/latest/" target="_blank">BICePs</a>
+                    <a class="nav-link" href="{{ site.baseurl }}/SymPyVolume/index.html" target="_blank">SymPyVolume</a>
+                    <a class="nav-link" href="{{ site.baseurl }}/Weather.html" target="_blank">Weather Prediction</a>
+                    </div>
+                </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ site.baseurl }}/posts_and_slides.html">Posts/Slides</a>
+                </li>
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="{{ site.baseurl }}/about.html">About</a>
+		</li>-->
                 <li class="nav-item">
                     <a target="_blank" class="nav-link" href="https://github.com/robraddi">Github</a>
                 </li>
 
+
+                <!--
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ site.baseurl }}/resume.html">CV</a>
+                    <a class="nav-link highlight" href="https://github.com/wowthemesnet/affiliates-jekyll-theme/archive/master.zip">Download Theme</a>
                 </li>
-
-
+                -->
 
             </ul>
             <!-- End Menu -->
@@ -100,6 +124,7 @@
         </p>
     </div>
 
+
     <!-- Content
     ================================================== -->
     <div class="main-content">
@@ -108,72 +133,103 @@
 
     </div><!-- /.container -->
 
+
+
+    <!-- Before Footer
+    ================================================== -->
+    <div class="beforefooter">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!--
+                <div class="col-md-8">Hello</div>
+                <div class="col-md-4 text-right footersocial">
+                    <h5>Follow me</h5>
+                    <i class="fa fa-github"></i>
+                -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Begin Footer
     ================================================== -->
     <footer class="footer">
+
         <div class="container">
+
             <div class="row">
                 <div class="col-sm-3">
                 <div class="footer-widget">
+                <!--
+		    <a href="{{site.baseurl}}/contact">
+			    <img src="{{ site.baseurl }}/assets/images/logo-footer.png">
+                </a>
+                -->
 
+		<!-- Contact information -->
+		<p>Mailing Address:<br>
+                1901 N. 13th St.<br>
+		Beury Hall Room 102<br>
+		Temple University,<br>
+		Philadelphia, PA 19122<br>
+		</p>
+
+
+                </div>
+                </div>
+
+                <div class="col-sm-4">
+                <div class="footer-widget">
+			<!--<h5 class="title"></h5>-->
+                <h5 class="title">Contact Info:</h5>
                 <ul>
-                  <li>
-                   <!-- email -->
-                   <div style="text-align: left;">
-                     <a href="mailto:rraddi@temple.edu">
-                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZIInA5Aem0L0Vgckl0tKdJunbARBvfjxgQ&usqp=CAU" width="20px" align="left" style="vertical-align:middle">
-                       <span style="margin-left:5px">rraddi@temple.edu</span>
-                     </a>
-                   </div>
-                  </li>
-                  <li>
-                  <!-- GitHub -->
-                  <div style="text-align: left;">
-                    <a href="https://github.com/robraddi">
-                      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="20px" align="left" style="vertical-align:middle">
-                      <span style="margin-left:5px">github.com/robraddi</span>
-                    </a>
-                  </div>
-                  </li>
-                  <li>
-                  <!-- LinkedIn -->
-                  <div style="text-align: left;">
-                    <a href="https://www.linkedin.com/in/rraddi">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png" width="20px" align="left" style="vertical-align:middle">
-                      <span style="margin-left:5px">linkedin.com/in/rraddi</span>
-                    </a>
-                  </div>
-                  </li>
-                  <li>
-                  <!-- Google Scholar -->
-                  <div style="text-align: left;">
-                    <a href="https://scholar.google.com/citations?user=P2BSqgYAAAAJ&hl=en">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/2048px-Google_Scholar_logo.svg.png" width="20px" align="left" style="vertical-align:middle">
-                      <span style="margin-left:5px">Robert M. Raddi</span>
-                    </a>
-                  </div>
-                  </li>
+                <li>Office: Beury Hall, Room 102</li>
+                <li>Email: <a target="_blank" href="rraddi@temple.edu">rraddi@temple.edu</a></li>
+                <li>GitHub: <a target="blank" href="https://github.com/robraddi">https://github.com/robraddi</a></li>
+                <li>LinkedIn: <a target="blank" href="https://www.linkedin.com/in/rraddi">https://www.linkedin.com/in/rraddi</a></li>
                 </ul>
                 </div>
                 </div>
 
                 <div class="col-sm-4">
                 <div class="footer-widget">
+                <h5 class="title">Additional Info:</h5>
+
+                <p style="text-align:left;font-size:100%;">
+		<ul>
+			<li><a href="{{ site.baseurl }}/resume.html" target="_blank">Resume</a></li>
+			<!--<li><a href="{{ site.baseurl }}/notes.html" target="_blank">Notes</a></li>-->
+		</ul>
+                    <br>
                 </div>
                 </div>
 
+                <!--
+                <div class="col-sm-3">
+                <div class="footer-widget">
+                <h5 class="title">Author</h5>
+                <ul>
+                </ul>
+                </div>
+                </div>
+                -->
+
             </div>
+
+
 
 
             <div class="copyright">
                 <p class="pull-left">
-                Copyright © {{ site.time | date: "%Y" }} RMR.
+                Copyright © {{ site.time | date: "%Y" }} {{ site.name }}.
                 </p>
                 <p class="pull-right">
-             		<a target="_blank" href="https://www.wowthemes.net/free-jekyll-template-affiliates/">Affiliates Theme</a>
+                <!-- Please, leave credit to author unless you own a commercial license: https://www.wowthemes.net/freebies-license/ -->
+		Special thanks to Sal's <a target="_blank" href="https://www.wowthemes.net/free-jekyll-template-affiliates/">"Affiliates Theme"</a>.
                 </p>
                 <div class="clearfix"></div>
             </div>
+
         </div>
 
     </footer>
@@ -201,7 +257,3 @@
 </body>
 
 </html>
-
-
-
-

@@ -1,60 +1,142 @@
 ---
-layout: default
+layout: main
 title: Robert M. Raddi
 ---
 
-<!-- Home Jumbotron
-================================================== -->
-<section class="intro full-width">
-    <style>
-    .wrapintro{
-	    text-align: justify;
-    }
-    </style>
-    <div class="wrapintro">
-        <!--<h1>Robert M. Raddi</h1>-->
-        <!--<h2 class="lead">Header</h2>-->
-        <p style="text-align:justify;font-size:100%;">
-	    <figure>
-	        <img src="{{ site.baseurl }}/assets/images/TU_profile.jpg" height="20%" width="20%" align="left" hspace="10px">
-	    </figure>
-            I'm a theoretical chemist from the greater Philadelphia area who
-            loves experiencing diverse cultures and meeting new people.  My top two
-	    favorite activities are programming and hiking. Currently, I work in the
-	    <a href="http://www.voelzlab.org">Voelz Lab</a> as a graduate research
-	    assistant in pursuit of obtaining a Ph.D. in Theoretical/Physical Chemistry from
-	    <a href="https://chem.cst.temple.edu">Temple University</a>.
-        </p>
+
+<div class="scrollable-content">
+    <p>
+    <b>Greetings!</b>
+    </p>
+    <p>I am a postdoctoral researcher originally from the greater Philadelphia area with a deep interest in the intersection of computational chemistry, machine learning, and statistical physics. My research focuses on improving molecular models by integrating various sources of information with Bayesian inference, maximum entropy methods, and deep learning techniques to bridge the gap between theory and experiment. These approaches have applications in biophysics, structural biology, and drug discovery, where accurate predictive models are essential for understanding complex molecular systems. </P>
+
+    <p>I received my Ph.D. in Theoretical/Physical Chemistry from <a href="https://chem.cst.temple.edu">Temple University</a> under the fantastic mentorship of Dr. Vincent A. Voelz. During my time in the <a href="http://www.voelzlab.org">Voelz lab</a>, my primary focus was to develop and apply Bayesian inference methods that enhance force field parameterization, ensemble refinement, and predictive modeling of biomolecular systems.
+    <!--My work has contributed to improving the accuracy of structural models and guiding experimental validation through integrative computational techniques.-->
+    In other projects, I created and analyzed large-scale all-atom molecular dynamics simulations to study the thermodynamics and kinetics of protein folding and protein-protein binding systems.
+    </p>
+    <p>Beyond research, I love hanging out with my fiancée, being outdoors, playing sports, exercising, and experiencing diverse cultures while meeting new people.
+    </p>
+
+    <p>More information about my research, publications, and projects can be found on this website. Feel free to reach out if you’re interested in collaborations or discussing cool science!</p>
+
+    <br>
+
+
+    <b>Selected Publications</b>
+    (<span style="align: left;font-size: 16pt;margin-left:5px;">$^{\large\boldsymbol{\dagger}}$</span><span style="align: left;font-size: 12pt;margin-left:5px;">these authors contributed equally</span>)
+
+
+<div class="publication-list">
+
+    <div class="publication">
+        <img src="{{ site.baseurl }}/figures/2-D_opt_bootstrap_trust-ncg_32_replicas_systematic_error.png" alt="Publication Image">
+        <div class="publication-info">
+          <p style="font-weight:normal">How can we properly refine our physical models using ensemble-averaged experimental data (e.g., NMR, SAXS, Cryo-EM, etc.) while accounting for error in the data?  Can we variationally minimize our free energy-like quanitity (the BICePs score) to optimize force field parameters?</p>
+            <p><b>Robert M. Raddi</b> and Vincent A. Voelz. "Automated optimization of force field parameters against ensemble-averaged measurements with Bayesian Inference of Conformational Populations."
+            <a href="https://arxiv.org/abs/2402.11169" target="_blank">arxiv.org/abs/2402.11169</a></p>
+        </div>
     </div>
-</section>
+
+    <div class="publication">
+        <img src="{{ site.baseurl }}/figures/landscape_HN_C.png" alt="Publication Image">
+        <div class="publication-info">
+          <p style="font-weight:normal">How can we optimize our models used to predict experimental observables? How can we best determine Karplus parameters without having a crystal structure?</p>
+            <p><b>Robert M. Raddi</b>, Tim Marshall and Vincent A. Voelz. "Automatic Forward Model Parameterization with Bayesian Inference of Conformational Populations."
+            <a href="https://arxiv.org/abs/2405.18532" target="_blank">arxiv.org/abs/2405.18532</a></p>
+        </div>
+    </div>
 
 
-<!--
-<div class="section-title h2">Reseach:</div>
-<div class="wrapintro1">
+    <div class="publication">
+        <img src="{{ site.baseurl }}/figures/peptide_1a.png" alt="Publication Image">
+        <div class="publication-info">
+          <p style="font-weight:normal">Will the inclusion of experimental data restraints improve predicitons of folding stability? Does finding generalized Karplus parameters across these twelve systems help our predictions?</p>
+            <p>Thi Dung Nguyen$^{\large\boldsymbol{\dagger}}$, <b>Robert M. Raddi</b>$^{\large\boldsymbol{\dagger}}$, and Vincent A. Voelz. "High-resolution tuning of non-natural and cyclic peptide folding landscapes against NMR measurements using Markov models and Bayesian Inference of Conformational Populations."
+            <a href="https://doi.org/10.26434/chemrxiv-2024-sz1xx" target="_blank">10.26434/chemrxiv-2024-sz1xx</a></p>
+        </div>
+    </div>
 
-    <h3> Confrences: </h3>
-    <ul>
-        <li style="list-style-type: none;"><h5> Poster sessions:</h5></li>
-        <ul>
-            <li style="list-style-type: none;"> - Annual Biophysical Society meeting 2018</li>
-            <li style="list-style-type: none;"> - American Chemical Society 2018</li>
-            <li style="list-style-type: none;"> - Poster session - Annual Biophysical Society meeting 2020</li>
-            <li style="list-style-type: none;"> - American Chemical Society 2020</li>
-        </ul>
-        <li style="list-style-type: none;"><h5>Talks:</h5></li>
-    </ul>
+
+    <div class="publication">
+        <img src="{{ site.baseurl }}/figures/populations_A99SB-ildn_SEM.pdf" alt="Publication Image">
+        <div class="publication-info">
+          <p style="font-weight:normal">How do we know our physical models (e.g., force fields) are good? What is the best way to objectively rank them?</p>
+          <p><b>Robert M. Raddi</b>, Tim Marshall, Yunhui Ge, and Vincent A. Voelz. "Model Selection using Bayesian Inference of Conformational Populations with Replica-Averaging." <a href="https://doi.org/10.26434/chemrxiv-2023-396mm" target="_blank">10.26434/chemrxiv-2023-396mm</a>
+            </p>
+        </div>
+    </div>
+
+
+
+    <div class="publication">
+        <img src="{{ site.baseurl }}/figures/bicepsv2.0_toc.pdf" alt="Publication Image">
+        <div class="publication-info">
+          <p><b>Robert M. Raddi</b>, Yunhui Ge, and Vincent A. Voelz. "BICePs v2.0: Software for Ensemble Reweighting using Bayesian Inference of Conformational Populations." J. Chem. Inf. Model. 2023, 63, 8, 2370–2381. <a href="https://doi.org/10.26434/chemrxiv-2022-1b24c" target="_blank">preprint</a>; <a href="https://doi.org/10.1021/acs.jcim.2c01296" target="_blank">article</a>
+            </p>
+        </div>
+    </div>
+
+
+
+    <div class="publication">
+        <img src="{{ site.baseurl }}/figures/alchemical_intermediates.png" alt="Publication Image">
+        <div class="publication-info">
+            <p>Dylan Novack, <b>Robert M. Raddi</b>, Si Zhang, Matthew F.D. Hurley and Vincent A. Voelz. "A simple method to optimize the spacing and number of alchemical intermediates in expanded ensemble free energy calculations."
+            <a href="https://doi.org/10.26434/chemrxiv-2025-7fdpf" target="_blank">10.26434/chemrxiv-2025-7fdpf</a></p>
+        </div>
+    </div>
+
+
+    <div class="publication">
+        <img src="https://pubs.rsc.org/en/Image/Get?imageInfo.ImageType=GA&imageInfo.ImageIdentifier.ManuscriptID=D3CP02197A&imageInfo.ImageIdentifier.Year=2023" alt="Publication Image">
+        <div class="publication-info">
+          <p>Matthew F.D. Hurley$^{\large\boldsymbol{\dagger}}$, <b>Robert M. Raddi</b>$^{\large\boldsymbol{\dagger}}$, Jason Pattis and Vincent A. Voelz. "Expanded Ensemble Predictions of Absolute Binding Free Energies in the SAMPL9 Host-Guest Challenge." Phys. Chem. Chem. Phys., 2023,25, 32393-32406. <a href="https://chemrxiv.org/engage/chemrxiv/article-details/648a6129be16ad5c57f0cee0" target="_blank">preprint</a>; <a href="https://doi.org/10.1039/D3CP02197A" target="_blank">article</a>
+            </p>
+        </div>
+    </div>
+
+
+
+
+      <!--
+      <li style="margin-left:0px; align: left;"><b>Robert M. Raddi</b>> and Vincent A. Voelz. "A Markov State Model of Solvent Features Reveals Water Dynamics in Protein-Peptide Binding." J. Phys. Chem. B 2023, 127, 50, 10682–10690. <a href="https://doi.org/10.26434/chemrxiv-2023-r6njk" target="_blank">preprint</a>; <a href="https://doi.org/10.1021/acs.jpcb.3c04775" target="_blank">article</a> </li>
+
+      <li style="margin-left:0px; align: left;margin-bottom:0px;"><b>Robert M. Raddi</b>>, and Vincent A. Voelz. "Stacking Gaussian Processes to Improve pKa Predictions in the SAMPL7 Challenge." Journal of Computer-Aided Molecular Design 35 (2021): 953-961. <a href="https://doi.org/10.26434/chemrxiv.14650302.v1" target="_blank">preprint</a>; <a href="https://link.springer.com/article/10.1007/s10822-021-00411-8" target="_blank">article</a></li>
+
+      <li style="margin-left:0px; align: left;">Steven Goold, <b>Robert M. Raddi</b>> and Vincent A. Voelz. "Expanded Ensemble Predictions of Toluene‑Water Partition Coefficients in the SAMPL9 log$P$ Challenge."<b></b><a href="https://chemrxiv.org/engage/chemrxiv/article-details/67918563fa469535b95a9518" target="_blank">preprint</a>; <a href="https://pubs.rsc.org/en/Content/ArticleLanding/2024/CP/D4CP03621B" target="_blank">article</a></li></li>
+
+
+      -->
+
+
+
+
+    <!-- Add more publications in the same format -->
+    <br>
+    <footer style="align: left;font-size: 12pt;margin-left:5px;"><span style="font-size:16pt;">$^{\large\boldsymbol{\dagger}}$</span> these authors contributed equally</footer>
+    <br><br>
+    <br><br>
+    <br><br>
 </div>
--->
+
+</div>
 
 
-<!--
-<p style="text-align:justify;font-size:100%;">Please see my research tab
-to view my current projects.  The teaching tab contains Jupyter notebooks
-of courses that I teach as well as an assortment of helpful notebooks for
-python lessons.
-</p>
--->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
