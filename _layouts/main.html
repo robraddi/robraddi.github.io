@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!--
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.png">
 <title>{{ page.title }} | {{ site.name }}</title>
 {% seo %}
@@ -78,28 +81,32 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
 {% endif %}
 
 <style>
-/* Make links slightly darker than normal text */
+/* ========================= */
+/* GLOBAL LINK STYLES */
+/* ========================= */
 a {
-    color: #0056b3; /* Darker than default black (e.g., #333 or #222) */
-    text-decoration: none; /* Optional: Remove underlines */
+    color: #0056b3; /* Darker than normal text */
+    text-decoration: none;
 }
 
-/* On hover, make the text bold */
 a:hover {
     font-weight: bold;
 }
-/* Ensure profile container starts below navbar */
+
+/* ========================= */
+/* PROFILE CONTAINER (LEFT COLUMN) */
+/* ========================= */
 .profile-container {
     width: 20%;
     position: fixed;
     left: 0;
     top: var(--navbar-height, 50px); /* Adjust dynamically based on navbar height */
-    height: calc(100vh - var(--navbar-height, 50px));
+    height: calc(100vh - var(--navbar-height, 50px)); /* Ensure it fills available space */
     background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Ensures content stacks and copyright is at the bottom */
+    justify-content: space-between; /* Keeps copyright at the bottom */
     padding: 20px;
     overflow-y: auto;
 }
@@ -143,21 +150,143 @@ a:hover {
     margin-top: auto; /* Pushes it to the bottom */
 }
 
-/* Right Section: Scrollable Content */
+/* ========================= */
+/* MAIN CONTENT (RIGHT COLUMN) */
+/* ========================= */
 .content-container {
     width: 80%;
-    margin-left: 20%; /* Push to right of fixed profile */
+    margin-left: 20%; /* Push right of fixed profile */
     padding: 20px;
-    overflow-y: auto; /* Allows scrolling */
-    height: 100vh; /* Full height */
+    overflow-y: auto;
+    height: 100vh;
 }
+
 /* Make text justified for readability */
 .scrollable-content {
     text-align: justify;
     max-height: 100vh;
     overflow-y: auto;
-    padding-right: 20px; /* Prevents text from touching the right edge */
+    padding-right: 20px;
 }
+
+/* ========================= */
+/* PUBLICATION LIST STYLES */
+/* ========================= */
+.publication-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between items */
+    margin-top: 20px;
+}
+
+/* Each Publication Entry */
+.publication {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: nowrap; /* Ensures text stays beside the image */
+}
+
+/* Standardized Image Size (Responsive & Consistent) */
+.publication img {
+    width: 20%; /* Image takes up 20% of the available space */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 180px; /* Prevents excessive scaling */
+    min-width: 100px; /* Ensures images don’t shrink too much */
+    object-fit: contain; /* Ensures full image visibility */
+    border-radius: 5px; /* Optional rounded corners */
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Publication Text Area */
+.publication-info {
+    flex: 1; /* Ensures text takes up the remaining space */
+    text-align: justify;
+}
+
+/* Publication Link Styling */
+.publication-info a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.publication-info a:hover {
+    text-decoration: underline;
+}
+
+/* ========================= */
+/* RESPONSIVE DESIGN FIXES */
+/* ========================= */
+
+/* For large screens (desktops) */
+@media (min-width: 1025px) {
+    .profile-container {
+        width: 20%; /* Default width */
+    }
+
+    .content-container {
+        width: 80%;
+        margin-left: 20%;
+    }
+}
+
+/* For medium screens (tablets) */
+@media (max-width: 1024px) {
+    .profile-container {
+        width: 25%; /* Profile section slightly wider for readability */
+    }
+
+    .content-container {
+        width: 75%;
+        margin-left: 25%;
+    }
+
+    .publication img {
+        width: 25%; /* Make images slightly larger */
+    }
+}
+
+/* For small screens (phones) */
+@media (max-width: 768px) {
+    .profile-container {
+        width: 30%; /* Never exceeds 30% of the screen */
+        min-width: 120px; /* Ensures it doesn't get too small */
+        height: auto; /* Adjusts dynamically */
+        position: fixed; /* Keeps it in place */
+        left: 0;
+        top: var(--navbar-height, 50px);
+    }
+
+    .profile-img {
+        max-width: 80%; /* Ensures the image scales down */
+        height: auto;
+    }
+
+    .content-container {
+        width: 70%; /* Takes the remaining space */
+        margin-left: 30%;
+        padding: 10px;
+    }
+
+    .publication {
+        flex-direction: column; /* Stack images & text vertically on small screens */
+        align-items: center;
+        text-align: center;
+    }
+
+    .publication img {
+        width: 50%; /* Increase image size for readability */
+        max-width: 150px; /* Prevent oversized images */
+    }
+
+    .publication-info {
+        text-align: center; /* Center text on smaller screens */
+    }
+}
+
 
 .bordered-link {
     display: inline-block; /* Ensures proper padding & border visibility */

@@ -1,4 +1,8 @@
 
+html {
+    zoom: 1.0; /* Default zoom */
+}
+
 body {
     font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
     overflow-x: hidden;
@@ -145,16 +149,55 @@ section.recent-posts {
         box-shadow:none;
         border:0;
     }
-@media (min-width:992px) {
-    .mediumnavigation .dropdown-menu {
-        border:0;
-        box-shadow: 0px 10px 40px 0px rgba( 0, 0, 0, 0.05 );
-        margin:15px 0;
+
+/* ========================= */
+/* FIXED RESPONSIVE SCALING */
+/* ========================= */
+
+/* Apply scaling only to the scrollable content, NOT the body */
+@media (min-width: 1920px) {
+    .content-container {
+        transform: scale(1.2);
+        transform-origin: top center;
+        padding-top: 20px; /* Adjust for potential shifts */
     }
-
 }
-@media (min-width:576px) {
 
+@media (max-width: 1920px) and (min-width: 1281px) {
+    .content-container {
+        transform: scale(1.0);
+        transform-origin: top center;
+    }
+}
+
+@media (max-width: 1280px) and (min-width: 769px) {
+    .content-container {
+        transform: scale(0.95);
+        transform-origin: top center;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        transform: scale(0.9);
+        transform-origin: top center;
+    }
+}
+
+/* ========================= */
+/* NAVIGATION FIXES */
+/* ========================= */
+
+@media (min-width: 992px) {
+    .mediumnavigation .dropdown-menu {
+        border: 0;
+        box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
+        margin: 15px 0;
+    }
+}
+
+@media (min-width: 576px) {
+    /* Additional styles can be added if needed */
 }
 .card-columns .card {
 	margin-bottom:20px;
@@ -940,28 +983,31 @@ img {
 }
 
 /* Standardized Image Size (Prevents Clipping) */
+
 /* Each Publication Entry */
 .publication {
     display: flex;
-    align-items: center;
+    align-items: center; /* Ensures vertical alignment */
     gap: 15px; /* Space between image and text */
+    flex-wrap: nowrap; /* Ensures text stays beside image */
 }
 
-/* Standardized Image Size (20% of Scrollable Content) */
+/* Standardized Image Size (Responsive & Consistent) */
 .publication img {
-    width: 25% !important; /* Set width to 20% of the container */
+    width: 25% !important; /* Image takes up 20% of the available space */
     height: auto; /* Maintain aspect ratio */
     max-width: 25% !important; /* Prevents excessive scaling */
-    object-fit: contain; /* Ensures the whole image fits inside without cropping */
-    border-radius: 5px; /* Optional: rounded corners */
-    background-color: white; /* Adds a subtle background if the image has transparency */
-    padding: 5px; /* Prevents the image from looking cramped */
-    border: 1px solid #ddd; /* Optional: Light border for aesthetics */
+    min-width: auto; /* Ensures images don’t shrink too much */
+    object-fit: contain; /* Prevents cropping */
+    border-radius: 5px; /* Optional rounded corners */
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #ddd; /* Subtle border */
 }
 
 /* Text Area Styling */
 .publication-info {
-    flex-grow: 1;
+    flex: 1; /* Ensures text takes remaining space */
     text-align: justify;
 }
 
@@ -974,6 +1020,24 @@ img {
 
 .publication-info a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .publication {
+        flex-direction: column; /* Stack images & text vertically on small screens */
+        align-items: center;
+        text-align: center;
+    }
+
+    .publication img {
+        width: 50% !important; /* Increase image size for readability */
+        max-width: 50% !important; /* Prevents oversized images */
+    }
+
+    .publication-info {
+        text-align: center; /* Centers text under image */
+    }
 }
 
 
