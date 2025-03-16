@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<!--
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
--->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.png">
 <title>{{ page.title }} | {{ site.name }}</title>
 {% seo %}
@@ -15,8 +13,6 @@
 <link href="{{ site.baseurl }}/assets/css/theme.css" rel="stylesheet">
 <link href="{{ site.baseurl }}/assets/css/custom.css" rel="stylesheet">
 
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- MathJax configuration -->
@@ -25,13 +21,7 @@
 MathJax.Hub.Config({
     TeX: {
         extensions: ["AMSmath.js", "color.js"],
-        equationNumbers: { autoNumber: "AMS" },
-        Macros: {
-            sigmaSEM: "\\sigma^{\\tiny\\text{SEM}}",
-            sigmaB: "\\sigma^{\\tiny\\text{B}}",
-            sigmaEff: "\\sigma_{\\tiny\\text{0}}",
-            Znot: "Z_{\\tiny\\text{0}}",
-        }
+        equationNumbers: { autoNumber: "AMS" }
     },
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -41,29 +31,10 @@ MathJax.Hub.Config({
     },
     displayAlign: 'center',
     "HTML-CSS": {
-        styles: {
-        '.MathJax_Display': {
-            "margin": 0,
-            "font-size": "100%" // Change this value to adjust the font size.
-            }
-        },
         linebreaks: { automatic: true },
     },
 });
-
-MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
-    var TEX = MathJax.InputJax.TeX;
-    var PREFILTER = TEX.prefilterMath;
-    TEX.Augment({
-        prefilterMath: function (math, displaymode, script) {
-            // Adjust main equation size here if required
-            math = "\\scriptsize{" + math + "}";
-            return PREFILTER.call(TEX, math, displaymode, script);
-        }
-    });
-});
 </script>
-
 
 {{ site.sharethis }}
 
@@ -71,8 +42,9 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
 <!-- Google Analytics -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+  a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+  a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', '{{ site.google_analytics }}', 'auto');
@@ -85,7 +57,7 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
 /* GLOBAL LINK STYLES */
 /* ========================= */
 a {
-    color: #0056b3; /* Darker than normal text */
+    color: #0056b3;
     text-decoration: none;
 }
 
@@ -101,12 +73,12 @@ a:hover {
     position: fixed;
     left: 0;
     top: var(--navbar-height, 50px); /* Adjust dynamically based on navbar height */
-    height: calc(100vh - var(--navbar-height, 50px)); /* Ensure it fills available space */
+    height: calc(100vh - var(--navbar-height, 50px));
     background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Keeps copyright at the bottom */
+    justify-content: flex-start; /* We'll handle copyright separately */
     padding: 20px;
     overflow-y: auto;
 }
@@ -125,6 +97,7 @@ a:hover {
     list-style: none;
     padding: 0;
     text-align: center;
+    margin-bottom: 20px; /* Some spacing before the end of profile container */
 }
 
 .contact-info li {
@@ -142,31 +115,24 @@ a:hover {
     margin-right: 10px;
 }
 
-/* Copyright at the bottom */
-.copyright {
-    text-align: center;
-    font-size: 0.8em;
-    color: #666;
-    margin-top: auto; /* Pushes it to the bottom */
-}
-
 /* ========================= */
 /* MAIN CONTENT (RIGHT COLUMN) */
 /* ========================= */
 .content-container {
     width: 80%;
-    margin-left: 20%; /* Push right of fixed profile */
+    margin-left: 20%;
     padding: 20px;
+    padding-right: 10px;
     overflow-y: auto;
     height: 100vh;
+    text-align: justify;
 }
 
-/* Make text justified for readability */
 .scrollable-content {
     text-align: justify;
     max-height: 100vh;
     overflow-y: auto;
-    padding-right: 20px;
+    padding-right: 5px;
 }
 
 /* ========================= */
@@ -175,38 +141,34 @@ a:hover {
 .publication-list {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between items */
+    gap: 20px;
     margin-top: 20px;
 }
 
-/* Each Publication Entry */
 .publication {
     display: flex;
     align-items: center;
     gap: 15px;
-    flex-wrap: nowrap; /* Ensures text stays beside the image */
+    flex-wrap: nowrap;
 }
 
-/* Standardized Image Size (Responsive & Consistent) */
 .publication img {
-    width: 20%; /* Image takes up 20% of the available space */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 180px; /* Prevents excessive scaling */
-    min-width: 100px; /* Ensures images don’t shrink too much */
-    object-fit: contain; /* Ensures full image visibility */
-    border-radius: 5px; /* Optional rounded corners */
+    width: 30% !important;
+    height: auto;
+    max-width: 50% !important;
+    min-width: 30% !important;
+    object-fit: contain;
+    border-radius: 5px;
     background-color: white;
     padding: 5px;
     border: 1px solid #ddd;
 }
 
-/* Publication Text Area */
 .publication-info {
-    flex: 1; /* Ensures text takes up the remaining space */
+    flex: 1;
     text-align: justify;
 }
 
-/* Publication Link Styling */
 .publication-info a {
     color: #0056b3;
     text-decoration: none;
@@ -218,15 +180,24 @@ a:hover {
 }
 
 /* ========================= */
+/* COPYRIGHT SECTION */
+/* ========================= */
+.site-footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+    padding: 10px;
+}
+
+/* ========================= */
 /* RESPONSIVE DESIGN FIXES */
 /* ========================= */
 
 /* For large screens (desktops) */
 @media (min-width: 1025px) {
     .profile-container {
-        width: 20%; /* Default width */
+        width: 20%;
     }
-
     .content-container {
         width: 80%;
         margin-left: 20%;
@@ -234,71 +205,91 @@ a:hover {
 }
 
 /* For medium screens (tablets) */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 769px) {
     .profile-container {
-        width: 25%; /* Profile section slightly wider for readability */
+        width: 25%;
     }
-
     .content-container {
         width: 75%;
         margin-left: 25%;
     }
-
     .publication img {
-        width: 25%; /* Make images slightly larger */
+        width: 40% !important;
     }
 }
+
+/* Remove forced height & scroll on larger screens */
+@media (min-width: 769px) {
+    .content-container {
+        height: auto !important;      /* override 100vh */
+        overflow-y: visible !important; /* override auto */
+    }
+    .scrollable-content {
+        max-height: none !important; /* override the 100vh limit */
+        overflow-y: visible !important;
+    }
+}
+
 
 /* For small screens (phones) */
 @media (max-width: 768px) {
     .profile-container {
-        width: 30%; /* Never exceeds 30% of the screen */
-        min-width: 120px; /* Ensures it doesn't get too small */
-        height: auto; /* Adjusts dynamically */
-        position: fixed; /* Keeps it in place */
-        left: 0;
-        top: var(--navbar-height, 50px);
-    }
-
-    .profile-img {
-        max-width: 80%; /* Ensures the image scales down */
+        position: static;       /* Remove fixed positioning */
+        width: 100%;
         height: auto;
+        margin-bottom: 20px;    /* Provide spacing after the profile */
+        overflow-y: visible;    /* Let content flow instead of scrolling separately */
     }
-
     .content-container {
-        width: 70%; /* Takes the remaining space */
-        margin-left: 30%;
+        position: static;
+        width: 100%;
+        margin-left: 0;
+        height: auto;
         padding: 10px;
+        overflow-y: visible;    /* Remove separate scrollbar for content */
     }
-
+    .scrollable-content {
+        max-height: none;       /* Remove forced max-height */
+        overflow-y: visible;    /* Let the entire page scroll as one */
+        padding-right: 0;       /* Remove extra padding on the right if desired */
+        text-align: justify;    /* Keep justified text for readability */
+    }
     .publication {
-        flex-direction: column; /* Stack images & text vertically on small screens */
+        flex-direction: column;
         align-items: center;
         text-align: center;
     }
-
     .publication img {
-        width: 50%; /* Increase image size for readability */
-        max-width: 150px; /* Prevent oversized images */
+        width: 70% !important;
+        max-width: 70% !important;
     }
-
     .publication-info {
-        text-align: center; /* Center text on smaller screens */
+        text-align: justify;
     }
 }
-
-
 .bordered-link {
-    display: inline-block; /* Ensures proper padding & border visibility */
+    display: inline-block;
     border: 2px solid black;
-    padding: 5px 10px; /* Adjust for spacing inside the border */
-    border-radius: 5px; /* Optional: rounded corners */
-    text-decoration: none; /* Removes underline */
-    color: black; /* Ensures text is visible */
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+.bordered-link:hover {
+    background-color: #f8f9fa;
 }
 
-.bordered-link:hover {
-    background-color: #f8f9fa; /* Light background on hover */
+
+/* Example: Reduce padding on the navbar and brand */
+.navbar {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.navbar .navbar-brand h4 {
+    margin: 0;
+    font-size: 1.1rem; /* Adjust as you like */
+    line-height: 1.2;  /* Tighter line spacing */
 }
 
 </style>
@@ -326,10 +317,6 @@ a:hover {
         </div>
         <div class="collapse navbar-collapse" id="navbarsWow">
             <ul class="navbar-nav ml-auto">
-              <!--
-                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/research.html">Research</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/posts_and_slides.html">Blog</a></li>
-              -->
                 <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/assets/CurriculumVitae.html">CV</a></li>
             </ul>
         </div>
@@ -337,8 +324,8 @@ a:hover {
 </header>
 
 <div class="site-content">
-    <div class="container-fluid full-height d-flex">
-        <!-- Profile Container (Now included in all pages using 'main' layout) -->
+    <div class="container-fluid full-height d-flex flex-column">
+        <!-- Profile Container -->
         <div class="profile-container">
             <img src="{{ site.baseurl }}/assets/images/portrait.jpg" alt="Profile Picture" class="profile-img">
             <div class="contact-info">
@@ -367,20 +354,13 @@ a:hover {
                             <span>Robert M. Raddi</span>
                         </a>
                     </li>
-
-
-                    <!--<li><a class="nav-link bordered-link" href="{{ site.baseurl }}/assets/CurriculumVitae.html">Curriculum Vitae</a></li>-->
                     <li>
                         <a href="{{ site.baseurl }}/assets/CurriculumVitae.html">
                             <img src="https://static.vecteezy.com/system/resources/previews/024/235/602/non_2x/cv-icon-resume-illustration-sign-user-data-symbol-or-logo-vector.jpg" width="20px">
                             <span>Curriculum Vitae</span>
                         </a>
                     </li>
-
                 </ul>
-            </div>
-            <div class="copyright">
-                <p>Copyright © {{ site.time | date: "%Y" }} RMR.</p>
             </div>
         </div>
 
@@ -393,10 +373,14 @@ a:hover {
     </div>
 </div>
 
+<!-- Copyright at the very bottom -->
+<footer class="site-footer">
+    <p>Copyright © {{ site.time | date: "%Y" }} RMR.</p>
+</footer>
+
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script src="{{ site.baseurl }}/assets/js/theme.js"></script>
-
 </body>
 </html>
