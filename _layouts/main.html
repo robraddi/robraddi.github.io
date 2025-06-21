@@ -292,6 +292,76 @@ a:hover {
     line-height: 1.2;  /* Tighter line spacing */
 }
 
+
+
+/* ========================= */
+/* MODAL IMAGE ZOOM STYLES */
+/* ========================= */
+.image-modal {
+  display: none;
+  position: fixed; /* critical: full-screen and independent of scrollable parents */
+  z-index: 9999;   /* highest to cover everything */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.image-modal-box {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.image-modal-content {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+/* Close button inside box */
+.image-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.image-modal-close:hover {
+  color: #999;
+}
+
+.clickable-image {
+  cursor: zoom-in;
+}
+@media (max-width: 768px) {
+  .image-modal-box {
+    width: 90%;
+    max-width: 90%;
+    max-height: 70vh;
+  }
+
+  .image-modal-content {
+    max-height: 60vh;
+  }
+}
+
 </style>
 
 <script>
@@ -304,6 +374,41 @@ a:hover {
     });
 </script>
 </head>
+
+<!-- Modal structure -->
+<div class="image-modal" id="imageModal">
+  <div class="image-modal-box">
+    <span class="image-modal-close" id="modalClose">&times;</span>
+    <img class="image-modal-content" id="modalImage" aria-label="enlarged image">
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.getElementById("modalClose");
+
+  document.querySelectorAll(".clickable-image").forEach(img => {
+    img.addEventListener("click", function () {
+      modal.style.display = "flex";
+      modalImg.src = this.src;
+    });
+  });
+
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  modal.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+});
+</script>
+<!-- ############### -->
+
+
 
 <body class="layout-{{ page.layout }}">
 
@@ -384,3 +489,9 @@ a:hover {
 <script src="{{ site.baseurl }}/assets/js/theme.js"></script>
 </body>
 </html>
+
+
+
+
+
+

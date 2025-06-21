@@ -7,6 +7,17 @@
 <head>
 <meta charset="UTF-8">
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGLYHQT64S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KGLYHQT64S');
+</script>
+
+
+
 <!-- General and theme style sheets -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 
@@ -229,7 +240,8 @@ wkhtmltopdf --javascript-delay 10000 --outline --footer-center "[page]" --footer
     <!-- Short Address -->
     <div style="padding:1px;">
       <img src="https://e7.pngegg.com/pngimages/703/597/png-clipart-logo-house-home-house-angle-building-thumbnail.png" width="25px" style="vertical-align:middle">
-      <span style="margin-left:5px">Philadelphia, PA</span>
+      <!--<span style="margin-left:5px">Philadelphia, PA</span>-->
+      <span style="margin-left:5px">San Francisco, CA</span>
     </div>
     <!-- phone -->
     <div style="padding:1px;">
@@ -278,12 +290,21 @@ wkhtmltopdf --javascript-delay 10000 --outline --footer-center "[page]" --footer
         <span style="margin-left:5px">Robert M. Raddi</span>
       </a>
     </div>
+    <!-- ORCID -->
+    <div style="padding:1px;">
+      <a href="https://orcid.org/0000-0001-7139-5028">
+        <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" width="25px" style="vertical-align:middle">
+        <span style="margin-left:5px">0000-0001-7139-5028</span>
+      </a>
+    </div>
     <br>
+
   </div>
   <div class="col-md-6" style="width:73%;padding-right: 10px;margin-left:0px;">
     <p style="text-align: justify;">
     A passionate researcher, skilled in developing and applying machine/deep learning, Bayesian inference, and maximum entropy methods to a wide array of scientific problems. My current research effectively combines theory with experiment, enabling us to enhance the accuracy our molecular models. This interdisciplinary research has been recognized with numerous academic accolades and has fueled advancements in biophysics, structural biology, and drug discovery. With a strong commitment to scientific exploration and collaboration, I am eager to learn new methods, grow as a scientist, continue cutting-edge research, and hopefully influence other scientists along the way. <!--<u>My goal is to become a competitive candidate for an independent research faculty position in academia.</u>-->
     </p>
+    <br>
   </div>
 
 
@@ -327,10 +348,29 @@ wkhtmltopdf --javascript-delay 10000 --outline --footer-center "[page]" --footer
     <p style="text-align: justify;">
      <div class="row" style="width:100%">
          <div class="col-md-6" style="width:14%;padding-right: 0px;margin-left:0px;margin-right:0px;text-align:right;float:right;">
+           2025-Present
+         </div>
+         <div class="col-md-6" style="width:86%;padding-right: 10px;margin-left:0px;">
+           <span style="margin-bottom:0px;align: left;font-weight: bold;font-style:normal">Postdoctoral Scholar</span> [Mentors: Andrej Šali & Rada Savic]<br>
+           University of California San Francisco
+           <ul>
+             <li>Method development for Bayesian metamodeling — a general framework for integrating multiscale models of different types e.g., molecular structure and dynamics, networks, kinetic processes, etc.</li>
+             <li>Constructing and coupling structural (protein-level), network (systems biology), and compartmental (PK/PD) models to study tuberculosis drug action across spatial and temporal scales.</li>
+             <!--<li>Collaborating with interdisciplinary teams to support predictive modeling and experimental design for optimizing treatment strategies.</li>-->
+
+             <!--<li>Contributing to open-source software modules for hierarchical model integration, uncertainty quantification, and data assimilation from diverse experimental sources.</li>-->
+
+           </ul>
+         </div>
+     </div>
+     <br>
+
+     <div class="row" style="width:100%">
+         <div class="col-md-6" style="width:14%;padding-right: 0px;margin-left:0px;margin-right:0px;text-align:right;float:right;">
            2024-2025
          </div>
          <div class="col-md-6" style="width:86%;padding-right: 10px;margin-left:0px;">
-           <span style="margin-bottom:0px;align: left;font-weight: bold;font-style:normal">Adjunct Research Assistant Professor</span><br>
+           <span style="margin-bottom:0px;align: left;font-weight: bold;font-style:normal">Adjunct Research Assistant Professor</span> [Mentor: Vincent Voelz]<br>
            Temple University, Philadelphia, PA
            <ul>
              <li>Submit co-first-author article to JCTC demonstrating high-resolution tuning of non-natural and cyclic peptide folding landscapes against NMR measurements.</li>
@@ -357,7 +397,7 @@ wkhtmltopdf --javascript-delay 10000 --outline --footer-center "[page]" --footer
            2018-2024
          </div>
          <div class="col-md-6" style="width:86%;padding-right: 10px;margin-left:0px;">
-           <span style="margin-bottom:0px;align: left;font-weight: bold;font-style:normal">Graduate Researcher/Fellow</span><br>
+           <span style="margin-bottom:0px;align: left;font-weight: bold;font-style:normal">Graduate Researcher/Fellow</span> [Mentor: Vincent Voelz]<br>
            Temple University, Philadelphia, PA
            <ul>
              <li>Awards granted by both the university and department for outstanding research contributions.</li>
@@ -375,7 +415,7 @@ wkhtmltopdf --javascript-delay 10000 --outline --footer-center "[page]" --footer
            2018-2023
          </div>
          <div class="col-md-6" style="width:86%;padding-right: 10px;margin-left:0px;">
-           <span style="margin-bottom:0px;align: left;font-weight: bold;font-style:normal">Teaching Assistant</span><br>
+           <span style="margin-bottom:0px;align: left;font-weight: bold;font-style:normal">Teaching Assistant</span> [Mentors: John Michel & Vincent Voelz]<br>
            Temple University, Philadelphia, PA
            <ul>
              <li>Received awards from both the university and department for exceptional teaching.</li>
@@ -414,12 +454,15 @@ wkhtmltopdf --javascript-delay 10000 --outline --footer-center "[page]" --footer
 
       <li style="margin-left:0px; align: left;"><u><b>Robert M. Raddi</b></u> and Vincent A. Voelz. "Automated optimization of force field parameters against ensemble-averaged measurements with Bayesian Inference of Conformational Populations." <a href="https://arxiv.org/abs/2402.11169" target="_blank">arxiv.org/abs/2402.11169</a></li>
 
-      <li style="margin-left:0px; align: left;">Dylan Novack, <u><b>Robert M. Raddi</b></u>, Si Zhang, Matthew F.D. Hurley and Vincent A. Voelz. "A simple method to optimize the spacing and number of alchemical intermediates in expanded ensemble free energy calculations."<a href="https://doi.org/10.26434/chemrxiv-2025-7fdpf" target="_blank">10.26434/chemrxiv-2025-7fdpf</a></li>
 
-      <li style="margin-left:0px; align: left;"><u><b>Robert M. Raddi</b></u>, Tim Marshall, Yunhui Ge, and Vincent A. Voelz. "Model Selection using Bayesian Inference of Conformational Populations with Replica-Averaging." <a href="https://doi.org/10.26434/chemrxiv-2023-396mm" target="_blank">10.26434/chemrxiv-2023-396mm</a>;</li>
+      <li style="margin-left:0px; align: left;">Dylan Novack, <u><b>Robert M. Raddi</b></u>, Si Zhang, Matthew F.D. Hurley and Vincent A. Voelz. "A simple method to optimize the spacing and number of alchemical intermediates in expanded ensemble free energy calculations." J. Chem. Inf. Model. (2025), <a href="https://doi.org/10.26434/chemrxiv-2025-7fdpf" target="_blank">preprint</a>; <a href="https://doi.org/10.1021/acs.jcim.5c00704" target="_blank">article</a></li>
 
 
-      <li style="margin-left:0px; align: left;">Thi Dung Nguyen$^{\large\boldsymbol{\dagger}}$, <u><b>Robert M. Raddi</b></u>$^{\large\boldsymbol{\dagger}}$, and Vincent A. Voelz. "High-resolution tuning of non-natural and cyclic peptide folding landscapes against NMR measurements using Markov models and Bayesian Inference of Conformational Populations." <a href="https://doi.org/10.26434/chemrxiv-2024-sz1xx" target="_blank">10.26434/chemrxiv-2024-sz1xx</a>; </li>
+      <li style="margin-left:0px; align: left;"><u><b>Robert M. Raddi</b></u>, Tim Marshall, Yunhui Ge, and Vincent A. Voelz. "Model Selection using Bayesian Inference of Conformational Populations with Replica-Averaging." J. Chem. Theory Comput. (2025), <a href="https://doi.org/10.26434/chemrxiv-2023-396mm" target="_blank">preprint</a>; <a href="https://doi.org/10.1021/acs.jctc.5c00044" target="_blank">article</a></li>
+
+
+      <li style="margin-left:0px; align: left;">Thi Dung Nguyen$^{\large\boldsymbol{\dagger}}$, <u><b>Robert M. Raddi</b></u>$^{\large\boldsymbol{\dagger}}$, and Vincent A. Voelz. "High-resolution tuning of non-natural and cyclic peptide folding landscapes against NMR measurements using Markov models and Bayesian Inference of Conformational Populations." J. Chem. Theory Comput. (2025), <a href="https://doi.org/10.26434/chemrxiv-2024-sz1xx" target="_blank">preprint</a>; <a href="https://doi.org/10.1021/acs.jctc.5c00489" target="_blank">article</a></li>
+
 
       <li style="margin-left:0px; align: left;">Matthew F.D. Hurley$^{\large\boldsymbol{\dagger}}$, <u><b>Robert M. Raddi</b></u>$^{\large\boldsymbol{\dagger}}$, Jason Pattis and Vincent A. Voelz. "Expanded Ensemble Predictions of Absolute Binding Free Energies in the SAMPL9 Host-Guest Challenge." Phys. Chem. Chem. Phys., 2023,25, 32393-32406. <a href="https://chemrxiv.org/engage/chemrxiv/article-details/648a6129be16ad5c57f0cee0" target="_blank">preprint</a>; <a href="https://doi.org/10.1039/D3CP02197A" target="_blank">article</a></li>
 
@@ -436,9 +479,9 @@ wkhtmltopdf --javascript-delay 10000 --outline --footer-center "[page]" --footer
 
 <!--      <br>
 <br>-->
+Physical Chemistry Chemical Physics, 2025, 27, 6005–6013 DOI: 10.1039/D4CP03621B
 
-
-      <li style="margin-left:0px; align: left;">Steven Goold, <u><b>Robert M. Raddi</b></u> and Vincent A. Voelz. "Expanded Ensemble Predictions of Toluene‑Water Partition Coefficients in the SAMPL9 log$P$ Challenge."<b></b><a href="https://chemrxiv.org/engage/chemrxiv/article-details/67918563fa469535b95a9518" target="_blank">preprint</a>; <a href="https://pubs.rsc.org/en/Content/ArticleLanding/2024/CP/D4CP03621B" target="_blank">article</a></li></li>
+      <li style="margin-left:0px; align: left;">Steven Goold, <u><b>Robert M. Raddi</b></u> and Vincent A. Voelz. "Expanded Ensemble Predictions of Toluene‑Water Partition Coefficients in the SAMPL9 log$P$ Challenge." Phys. Chem. Chem. Phys., 2025, 27, 6005–6013 <a href="https://chemrxiv.org/engage/chemrxiv/article-details/67918563fa469535b95a9518" target="_blank">preprint</a>; <a href="https://pubs.rsc.org/en/Content/ArticleLanding/2024/CP/D4CP03621B" target="_blank">article</a></li></li>
 
 
 
@@ -454,7 +497,7 @@ wkhtmltopdf --javascript-delay 10000 --outline --footer-center "[page]" --footer
     <p></p>
     <div class="awards"><u>Fellowships:</u></div>
     <ul style="margin-left:-10px;margin-top:0px">
-      <li style="align: left;">2024 Temple University College of Science and Technology Dissertation Grant </li>
+      <li style="align: left;">2024 Temple University College of Science and Technology Dissertation Grant (one winner from Chem. dept.)</li>
     </ul>
 
     <div class="awards"><u>Research Awards:</u></div>
