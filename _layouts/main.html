@@ -82,6 +82,11 @@ a:hover {
     padding: 20px;
     overflow-y: auto;
 }
+.site-footer {
+    margin-top: auto; /* ensures footer stays at bottom of container */
+    text-align: center;
+    padding: 10px 0;
+}
 
 /* Profile Image */
 .profile-img {
@@ -93,6 +98,7 @@ a:hover {
 }
 
 /* Contact Info Section */
+
 .contact-info ul {
     list-style: none;
     padding: 0;
@@ -104,6 +110,7 @@ a:hover {
     margin-bottom: 10px;
 }
 
+
 .contact-info a {
     display: flex;
     align-items: center;
@@ -113,6 +120,15 @@ a:hover {
 
 .contact-info img {
     margin-right: 10px;
+}
+
+.contact-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;              /* sticks to bottom of .profile-container */
+  text-align: center;
+  padding: 12px 0;
 }
 
 /* ========================= */
@@ -408,9 +424,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <!-- ############### -->
 
-
-
 <body class="layout-{{ page.layout }}">
+
 
 <header class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsWow" aria-controls="navbarsWow" aria-expanded="false" aria-label="Toggle navigation">
@@ -427,6 +442,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </div>
 </header>
+
 
 <div class="site-content">
     <div class="container-fluid full-height d-flex flex-column">
@@ -466,8 +482,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         </a>
                     </li>
                 </ul>
+
             </div>
+
+            <footer class="contact-footer">
+                <p style="font-size:80%">Copyright © {{ site.time | date: "%Y" }} RMR.</p>
+            </footer>
+
+
+
+
+
         </div>
+
+
 
         <!-- Main Content Area -->
         <div class="content-container">
@@ -479,9 +507,11 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 
 <!-- Copyright at the very bottom -->
+<!--
 <footer class="site-footer">
     <p>Copyright © {{ site.time | date: "%Y" }} RMR.</p>
 </footer>
+-->
 
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
